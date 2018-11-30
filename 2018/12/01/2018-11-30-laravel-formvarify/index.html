@@ -5,8 +5,15 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 12月每天一文">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="Laravel 表單驗證, 12月每天一文">
+    <meta name="description" content="Laravel 表單驗證
+在laravel中，其實可以說是有兩種方式來進行表單驗證：使用 Request 和使用 Validation 。
+5.5 新增 make rule 方式
+
+Request 表單驗證
+使用artisan這個工具
+
+p">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | 12月每天一文</title>
+    <title>Laravel 表單驗證 | 12月每天一文</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -246,13 +253,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('https://github.com/YangYangXun/ProjectImage/blob/master/EcommerceFashe/cart.png?raw=true')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        Laravel 表單驗證
                     </div>
                 </div>
             </div>
@@ -272,8 +279,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/test/" target="_blank">
-                    <span class="chip bg-color">test</span>
+                <a href="/tags/Laravel/" target="_blank">
+                    <span class="chip bg-color">Laravel</span>
                 </a>
                 
             </div>
@@ -283,8 +290,8 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/design/" class="post-category" target="_blank">
-                        design
+                    <a href="/categories/Backed-End/" class="post-category" target="_blank">
+                        Backed-End
                     </a>
                     
                 </span>
@@ -298,19 +305,143 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h1 id="Laravel-表單驗證"><a href="#Laravel-表單驗證" class="headerlink" title="Laravel 表單驗證"></a>Laravel 表單驗證</h1><ul>
+<li>在laravel中，其實可以說是有兩種方式來進行表單驗證：使用 Request 和使用 Validation 。</li>
+<li>5.5 新增 make rule 方式</li>
+</ul>
+<h2 id="Request-表單驗證"><a href="#Request-表單驗證" class="headerlink" title="Request 表單驗證"></a>Request 表單驗證</h2><ul>
+<li>使用artisan這個工具</li>
+</ul>
+<p><code>php artisan make:request TestRequest</code></p>
+<ul>
+<li>File</li>
+</ul>
+<pre class=" language-php"><code class="language-php">
+<span class="token keyword">class</span> <span class="token class-name">TestRequest</span> <span class="token keyword">extends</span> <span class="token class-name">FormRequest</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * Determine if the user is authorized to make this request.
+     * 
+     * @return bool
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">authorize</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">/**  
+        authorize()可以這樣簡單地理解：我們在處理這個表單請求(通常是一個post請求)的時候是否是需要進行身份驗證，這種驗證是指：  
+        比如A發表的評論，B能不能進行編輯。如果不能，則保留返回false，如果可以，則修改返回true。  
+        那麼我們這裡的邏輯是：既然是發表文章，在我們這個站點註冊的用戶(如果開放註冊的話)都是可以發表文章的，  
+        所以我們首先修改authorize()方法，將其返回值改為：return true;。  
+      */</span>
+
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">rules</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>
+            <span class="token comment" spellcheck="true">//</span>
+        <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<h2 id="Validation-表單驗證"><a href="#Validation-表單驗證" class="headerlink" title="Validation 表單驗證"></a>Validation 表單驗證</h2><ul>
+<li>使用 ValidatesRequestsTrait 的 validate 方法</li>
+</ul>
+<pre class=" language-php"><code class="language-php">
+ v5<span class="token number">.6</span>
+
+ <span class="token variable">$validatedData</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required|unique:posts|max:255'</span><span class="token punctuation">,</span>
+    <span class="token string">'body'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required'</span><span class="token punctuation">,</span>
+ <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ v5<span class="token number">.4</span>
+
+ <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+    <span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required|unique:posts|max:255'</span><span class="token punctuation">,</span>
+    <span class="token string">'body'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required'</span><span class="token punctuation">,</span>
+    <span class="token string">'publish_at'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'nullable|date'</span><span class="token punctuation">,</span>
+ <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<ul>
+<li>如果你不想要使用請求上使用 validate 方法，你可以通過 validator Validator facade 手動創建一個驗證器實例。用 Facade 上的 make 方法生成一個新的驗證器實例：</li>
+</ul>
+<pre class=" language-php"><code class="language-php">
+<span class="token delimiter">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Validator</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Controller</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">PostController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 保存一篇新的博客文章。
+     *
+     * @param  Request  $request
+     * @return Response
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">store</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+
+        <span class="token comment" spellcheck="true">// 傳給 make 方法的第一個參數是要驗證的數據。第二個參數則是該數據的驗證規則。</span>
+        <span class="token variable">$validator</span> <span class="token operator">=</span> Validator<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+            <span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required|unique:posts|max:255'</span><span class="token punctuation">,</span>
+            <span class="token string">'body'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$validator</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">fails</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">'post/create'</span><span class="token punctuation">)</span>
+                        <span class="token operator">-</span><span class="token operator">></span><span class="token function">withErrors</span><span class="token punctuation">(</span><span class="token variable">$validator</span><span class="token punctuation">)</span>
+                        <span class="token operator">-</span><span class="token operator">></span><span class="token function">withInput</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">// 保存文章...</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="可用驗證規則"><a href="#可用驗證規則" class="headerlink" title="可用驗證規則"></a>可用驗證規則</h2><ul>
+<li><code>Unique</code> : 驗證的字段在給定的數據庫表中必須是唯一的。如果沒有指定 column ，將會使用字段本身的名稱。<pre><code>&#39;email&#39; =&gt; &#39;unique:users,email_address&#39;
+</code></pre></li>
+</ul>
+<h2 id="顯示驗證錯誤信息"><a href="#顯示驗證錯誤信息" class="headerlink" title="顯示驗證錯誤信息"></a>顯示驗證錯誤信息</h2><p>如果傳入的請求參數未通過給定的驗證規則呢？正如前面所提到的，Laravel會自動把用戶重定向到之前的位置。另外，<strong>所有的驗證錯誤信息會被自動閃存到session</strong> .</p>
+<p>重申一次，我們不必在GET路由中將錯誤消息顯式綁定到視圖。<strong>因為Lavarel會檢查在Session數據中的錯誤信息，並自動將其綁定到視圖</strong>（如果這個視圖文件存在）。而其中的變量 $errors 是Illuminate\Support\MessageBag 的一個實例。</p>
+<h2 id="處理錯誤消息"><a href="#處理錯誤消息" class="headerlink" title="處理錯誤消息"></a>處理錯誤消息</h2><h2 id="Google-ReCAPTCHA-我不是機器人"><a href="#Google-ReCAPTCHA-我不是機器人" class="headerlink" title="Google ReCAPTCHA 我不是機器人"></a>Google ReCAPTCHA 我不是機器人</h2><ul>
+<li>reCAPTCHA 本來專做 CAPTCHA 的公司, 在 2009 年被 Google 收購<br>主要的目的大部是為了防止機器人濫用服務、大量留言等問題<br>我們會為了防止這些問題, 請使用者輸入一些被混淆過的文字、圖形字進判斷使用者是不是真人…. , 其中最明顯的受害者就是線上訂票系統.</li>
+<li>Google最早之前是使用reCAPTCHA v1，必須要輸入圖形驗證碼後才能夠通過驗證，而就在今年(2018/03/31)，Google正式取消reCAPTCHA v1的使用</li>
+<li>reCAPTCHA v2</li>
+</ul>
+<h2 id="請先向Google大神申請一組reCAPTCHA驗證碼"><a href="#請先向Google大神申請一組reCAPTCHA驗證碼" class="headerlink" title="請先向Google大神申請一組reCAPTCHA驗證碼"></a>請先向Google大神申請一組reCAPTCHA驗證碼</h2><p>填寫Google reCAPTCHA申請表單 - <a href="https://www.google.com/recaptcha/admin" target="_blank" rel="noopener">https://www.google.com/recaptcha/admin</a><br>Label： 填入標籤文字以便日後辨識哪一組reCAPTCHA是屬於那一類用途</p>
+<p>Domains：可填入多組網域名，每換一行為一組，以dev.neticrm.tw為例</p>
+<p>點擊Register</p>
+<p>申請成功！至Adding reCAPTCHA to your site區塊中，取得兩個金鑰：Site key及Secret Key(如下圖中被黃色矩形覆蓋的內容)</p>
+<ul>
+<li>ref</li>
+</ul>
+<p><a href="https://cola.workxplay.net/what-is-google-recaptcha/" target="_blank" rel="noopener">https://cola.workxplay.net/what-is-google-recaptcha/</a></p>
+<ul>
+<li>Packagelist </li>
+<li>google/recaptcha</li>
+<li>anhskohbo/no-captcha <a href="https://packagist.org/packages/anhskohbo/no-captcha" target="_blank" rel="noopener">https://packagist.org/packages/anhskohbo/no-captcha</a><br><code>`</code><br>composer require google/recaptcha “~1.1”<br>差異?<br>composer require google/recaptcha “^1.2”</li>
+</ul>
+<p>“require”: {<br>    “google/recaptcha”: “^1.2”<br>}</p>
+<pre><code>
+
+* laravel make:rule 
+* 研究 laravel app\Rules
+
+</code></pre><p>php artisan make:rule Captcha<br><code>`</code></p>
 
             </div>
             <hr>
@@ -449,7 +580,7 @@
                     <span class="reprint-tip">Reprint please specify: </span>
                     <a href="http://yoursite.com" class="b-link-green">12月每天一文</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/01/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2018/12/01/2018-11-30-laravel-formvarify/" class="b-link-green">Laravel 表單驗證</a>
                 </p>
             </div>
         </div>
@@ -469,7 +600,7 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2018/12/01/2018-11-30-laravel-formvarify/">
                     <div class="card-image">
@@ -489,9 +620,9 @@ Request 表單驗證
 
 p</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -504,6 +635,7 @@ p</div>
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -518,7 +650,7 @@ p</div>
         
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">Current</div>
+            <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
                 <a href="/2018/12/01/hello-world/">
                     <div class="card-image">
@@ -547,7 +679,6 @@ p</div>
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
