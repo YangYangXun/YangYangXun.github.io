@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>Laravel Session ����</title>
+      <link href="/2018/12/02/2018-12-2-Laravel-Session/"/>
+      <url>/2018/12/02/2018-12-2-Laravel-Session/</url>
+      
+        <content type="html"><![CDATA[<h2 id="�e��"><a href="#�e��" class="headerlink" title="�e��"></a>�e��</h2><p>HTTP �O�L���A���A�ҥH�ݭn���@�د���b�ШD�����������A���k�A�z�L�o�ج�������k<br>�����t�Τ~����P�O�ϥΎͥثe���A ( �n�J �n�X �v����…)�A�]�� Session �N�ϥͩԡC<br>Session ���ѤF�@�Ӧb�h�ӽШD�����x�s�����Τ�T������k�A�����D�n���� Laravel �� Session ����C<br>����|�A�ϥέ�� PHP �Ӥ���@�U�C</p><h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h2><p>�ϥί� php �ӹ�@ Session</p><h2 id="�t�m"><a href="#�t�m" class="headerlink" title="�t�m"></a>�t�m</h2><p>Session ���t�m�ɦb config / session.php ���C<br>��l�t�m�H File ���覡�ӰO�� Session�C</p><ul><li>file- �N�|�ܦs�x�bstorage/framework/sessions���C</li></ul><p><img src="https://i.imgur.com/kcwgpEc.png" alt=""></p><p>���F�ϥ� File �覡���x�s Session�A Laravel �ٴ��ѥH�U�X�ؤ覡 :</p><ul><li>cookie - Session �s�x�b�w���[�K��cookie���C</li><li>database - �N�|�ܦs�x�b�ƾڮw���C</li><li>memcached / redis- Session �s�x�b��󰪳t�w�s���s�x�t�Τ��C</li><li>array - Sessions �s�x�b PHP �Ʋդ��A�����|�Q���[�ơC</li></ul><p>�o�g�����ХH database �覡�Ӧs Session�C���ᦳ�ɶ��A�Ӥ@�@���ը�L��k�C</p><h2 id="�H-Database-�覡�Ӧs-Session"><a href="#�H-Database-�覡�Ӧs-Session" class="headerlink" title="�H Database �覡�Ӧs Session"></a>�H Database �覡�Ӧs Session</h2><h3 id="�-�w��ƪ�"><a href="#�-�w��ƪ�" class="headerlink" title="�]�w��ƪ�"></a>�]�w��ƪ�</h3><ul><li>�ڭ̧Q�� Migrate ���覡�ӫإ� sessions ��ƪ��ASchema �p�U :<br><code>`</code>php=</li></ul><p>Schema::create(‘sessions’, function ($table) {<br>    $table-&gt;string(‘id’)-&gt;unique();<br>    $table-&gt;unsignedInteger(‘user_id’)-&gt;nullable();<br>    $table-&gt;string(‘ip_address’, 45)-&gt;nullable();<br>    $table-&gt;text(‘user_agent’)-&gt;nullable();<br>    $table-&gt;text(‘payload’);<br>    $table-&gt;integer(‘last_activity’);<br>});</p><pre><code>* �ϥ� artisan �R�O�� migrate</code></pre><p>php artisan session:table</p><p>php artisan migrate</p><pre><code>* ������p�U![](https://i.imgur.com/4T4tHrR.png)���ۤU�@���ڭ̴N���[�� Session �p��O���ϥΎͪ��A�a!## �ϥ� Session### Session �s�J sessions table ���ɾ�* ���s�����Ĥ@���X�ݺ����� (���O�� IE �M Chrome �ШD)&gt;   �i�H�ݨ�U�ϲ��ͤF��� Session![](https://i.imgur.com/v3nFm2d.png)* �z�L Laravel Auth ����n�J��ToDo### ��� Session * �p�G�A�Q�n?���Ҧ��� Session ?�u�A�i�H�ϥ� all ��k�G```php= $data = $request-&gt;session()-&gt;all();</code></pre><p>Result :<br><img src="https://i.imgur.com/TW7am1W.png" alt=""></p><ul><li>��� Sessio ���������</li></ul><pre class=" language-php="><code class="language-php=">// �o�� Token$token = $request->session()->get('_token');// �o��W�@���ШD�� URL$request->session()->get('_previous')['url']</code></pre><ul><li>�P? Session ���O�_�s�b�Y�ĭ�</li></ul><pre class=" language-php="><code class="language-php=">// �s�b�B���� Null �i�H�� has �P�_if ($request->session()->has('users')) {}// �s�b�B��Ȭ� Null �i�H�� exists �P�_if ($request->session()->exists('users')) {}</code></pre><h3 id="�s�x�ƾ�"><a href="#�s�x�ƾ�" class="headerlink" title="�s�x�ƾ�"></a>�s�x�ƾ�</h3><ul><li>�s�J��ȹ�� Session ���� 2 �ؤ�k</li></ul><ol><li>�q�L�ШD���</li><li>�q�L�������</li></ol><pre class=" language-php="><code class="language-php=">// �q�L�ШD���$request->session()->put('key', 'value');// �q�L�������session(['key' => 'value']);</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Backed-End </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Laravel </tag>
+            
+            <tag> Session </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Laravel 表單驗證</title>
       <link href="/2018/12/01/2018-12-1-laravel-formvarify/"/>
       <url>/2018/12/01/2018-12-1-laravel-formvarify/</url>
