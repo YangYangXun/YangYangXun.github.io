@@ -5,8 +5,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Laravel Session 機制, 12月每天一文">
-    <meta name="description" content="前言HTTP 是無狀態的，所以需要有一種能夠在請求之間紀錄狀態的法，透過這種紀錄的方法網站系統才能夠判別使用者目前狀態 ( 登入 登出 權限等…)，因此 Session 就誕生拉。Session 提供了一個在多個請求之間儲存有關用戶訊息的方">
+    <meta name="keywords" content="入門 Gitflow 和 SourceTree, 12月每天一文">
+    <meta name="description" content="
+初始環境為 Clone 下 Github 的遠端 Repo 。我的專案內只有 index.html 檔，並且有一次提交紀錄，此時 History 畫面如下。可以看到目前的 Graph 有三個 Mark ，解釋如下方。 
+
+
+master ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Laravel Session 機制 | 12月每天一文</title>
+    <title>入門 Gitflow 和 SourceTree | 12月每天一文</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -246,13 +250,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('https://img.itw01.com/images/20171105/013720rYafdS_V5UOEGV.jpg!r1024x0.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E9%A6%96%E5%9C%96%2F2018-12-4-GitFlow-SourceTree.png?alt=media&token=0bd4404f-4dd6-4e79-9666-b8e5dea445c2')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Laravel Session 機制
+                        入門 Gitflow 和 SourceTree
                     </div>
                 </div>
             </div>
@@ -272,12 +276,12 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/Laravel/" target="_blank">
-                    <span class="chip bg-color">Laravel</span>
+                <a href="/tags/Git/" target="_blank">
+                    <span class="chip bg-color">Git</span>
                 </a>
                 
-                <a href="/tags/Session/" target="_blank">
-                    <span class="chip bg-color">Session</span>
+                <a href="/tags/SourceTree/" target="_blank">
+                    <span class="chip bg-color">SourceTree</span>
                 </a>
                 
             </div>
@@ -287,113 +291,74 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/Backed-End/" class="post-category" target="_blank">
-                        Backed-End
+                    <a href="/categories/Development-Tools/" class="post-category" target="_blank">
+                        Development Tools
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-02
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-04
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>HTTP 是無狀態的，所以需要有一種能夠在請求之間紀錄狀態的法，透過這種紀錄的方法<br>網站系統才能夠判別使用者目前狀態 ( 登入 登出 權限等…)，因此 Session 就誕生拉。<br>Session 提供了一個在多個請求之間儲存有關用戶訊息的方法，本次主要介紹 Laravel 的 Session 機制。<br>之後會再使用原生 PHP 來比較一下。</p>
-<h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h2><p>使用純 php 來實作 Session</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Session 的配置檔在 config / session.php 內。<br>初始配置以 File 的方式來記錄 Session。</p>
-<ul>
-<li>file- 將會話存儲在storage/framework/sessions中。</li>
-</ul>
-<p><img src="https://i.imgur.com/kcwgpEc.png" alt=""></p>
-<p>除了使用 File 方式來儲存 Session， Laravel 還提供以下幾種方式 :</p>
-<ul>
-<li>cookie - Session 存儲在安全加密的cookie中。</li>
-<li>database - 將會話存儲在數據庫中。</li>
-<li>memcached / redis- Session 存儲在基於高速緩存的存儲系統中。</li>
-<li>array - Sessions 存儲在 PHP 數組中，但不會被持久化。</li>
-</ul>
-<p>這篇先介紹以 database 方式來存 Session。之後有時間再來一一嘗試其他方法。</p>
-<h2 id="以-Database-方式來存-Session"><a href="#以-Database-方式來存-Session" class="headerlink" title="以 Database 方式來存 Session"></a>以 Database 方式來存 Session</h2><h3 id="設定資料表"><a href="#設定資料表" class="headerlink" title="設定資料表"></a>設定資料表</h3><ul>
-<li>我們利用 Migrate 的方式來建立 sessions 資料表，Schema 如下 :<br><code>`</code>php=</li>
-</ul>
-<p>Schema::create(‘sessions’, function ($table) {<br>    $table-&gt;string(‘id’)-&gt;unique();<br>    $table-&gt;unsignedInteger(‘user_id’)-&gt;nullable();<br>    $table-&gt;string(‘ip_address’, 45)-&gt;nullable();<br>    $table-&gt;text(‘user_agent’)-&gt;nullable();<br>    $table-&gt;text(‘payload’);<br>    $table-&gt;integer(‘last_activity’);<br>});</p>
-<pre><code>* 使用 artisan 命令來 migrate
-
-</code></pre><p>php artisan session:table</p>
-<p>php artisan migrate</p>
-<pre><code>
-* 完成後如下
-
-![](https://i.imgur.com/4T4tHrR.png)
-
-接著下一章我們就來觀察 Session 如何記錄使用者狀態吧!
-
-
-## 使用 Session
-
-### Session 存入 sessions table 的時機
-
-* 當瀏覽器第一次訪問網站時 (分別用 IE 和 Chrome 請求)
-&gt;   可以看到下圖產生了兩個 Session
-
-![](https://i.imgur.com/v3nFm2d.png)
-
-
-* 透過 Laravel Auth 機制登入時
-
-ToDo
-
-
-### 獲取 Session 
-
-* 如果你想要获取所有的 Session 数据，可以使用 all 方法：
-
-```php=
- $data = $request-&gt;session()-&gt;all();
-</code></pre><p>Result :<br><img src="https://i.imgur.com/TW7am1W.png" alt=""></p>
-<ul>
-<li>獲取 Sessio 中部份資料</li>
-</ul>
-<pre class=" language-php="><code class="language-php=">// 得到 Token
-$token = $request->session()->get('_token');
-// 得到上一次請求的 URL
-$request->session()->get('_previous')['url']
-
-</code></pre>
-<ul>
-<li>判断 Session 中是否存在某个值</li>
-</ul>
-<pre class=" language-php="><code class="language-php=">
-// 存在且不為 Null 可以用 has 判斷
-if ($request->session()->has('users')) {
-
-}
-
-// 存在且其值為 Null 可以用 exists 判斷
-if ($request->session()->exists('users')) {
-
-}
-</code></pre>
-<h3 id="存儲數據"><a href="#存儲數據" class="headerlink" title="存儲數據"></a>存儲數據</h3><ul>
-<li>存入鍵值對到 Session 中有 2 種方法</li>
-</ul>
-<ol>
-<li>通過請求實例</li>
-<li>通過全局函數</li>
+                <ol>
+<li>初始環境為 Clone 下 Github 的遠端 Repo 。我的專案內只有 index.html 檔，並且有一次提交紀錄，此時 History 畫面如下。<br>可以看到目前的 Graph 有三個 Mark ，解釋如下方。 </li>
 </ol>
-<pre class=" language-php="><code class="language-php=">
-// 通過請求實例
-$request->session()->put('key', 'value');
+<ul>
+<li><code>master</code> : </li>
+<li><code>origin/master</code> : 我們用 (遠端倉庫名)/(分支名) 這樣的形式表示遠端分支。Git 會自動為你將 Clone 位址的遠端倉庫命名為 origin，<br> 並下載其中所有的資料，建立一個指向它的 master 分支的指標。</li>
+<li><code>origin/HEAD</code> : 用來指向目前分支的最新版本，也就是指向origin/master。</li>
+<li><p>origin 其實就是遠端儲存庫的別名，你可以輸入 <code>git remote -v</code> 就可以看到遠端儲存庫的路徑。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep1.png?alt=media&amp;token=6f13c184-6c0f-4ffa-b1b4-5ab2c27ed145" alt=""></p>
+</li>
+</ul>
+<ol start="2">
+<li><p>接著就來建立我們 Gitflow 大地圖的第一步，創建一個 develop 分支。上方欄 Branch 按下去，<br>填入 branch 名稱即可。<strong>細部觀察</strong>可以發現創建分支後 SourceTree 會自動幫我們跳到分支上。<br>此動作相當於<strong>指令方式</strong>建立分支 <code>git branch develop</code>  不過指令似乎不會幫我們自動跳到分支。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep2.png?alt=media&amp;token=70a4083e-f0b1-4f06-b998-59b2514e092a" alt=""></p>
+</li>
+<li><p>再加入兩支 feature 分支。分別是 feature/EditHomePage 以及 feature/AddAboutMe。<br>一樣可以發現圓點標記都停留在最後加入的分支上。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep3.png?alt=media&amp;token=0af6ed08-a6e8-4a72-b8b1-9fb04cd8fd1c" alt=""></p>
+</li>
+<li><p>回到 feature/EditHomePage 編輯 index.html 並且做一次提交。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep4.png?alt=media&amp;token=0f2c8c4a-fc9a-4881-9232-f9ef145f173f" alt=""></p>
+</li>
+<li><p>如果成功完成 feature 分支任務了。我們就可以做 merge 到 develop 的動作，首先要先跳到 develop<br>分支，鼠標移動到要 merge 得分支上，右鍵選 merge ，完成後如下圖。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep5.png?alt=media&amp;token=cdb37280-189e-4860-8ad8-1a355a0958f3" alt=""></p>
+</li>
+<li><p>都沒問題後可以刪除 feature 分支，因為它已經完成階段性的任務了。同時跳到 feature/AddAboutMe      新增一支 about.html 並提交。結果如圖，小樹出現了。<br><strong>指令方式</strong>刪除分支 <code>git branch -d feature/EditHomePage</code></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep6.png?alt=media&amp;token=f90560d1-a902-4dd7-91e3-38e9814a83e0" alt=""></p>
+</li>
+<li><p>一樣完成 feature 後 merge 到 develop。完成如圖。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep7.png?alt=media&amp;token=096825f5-a773-4a16-90bf-8b55481032d0" alt=""></p>
+</li>
+</ol>
+<h2 id="常見專案狀況"><a href="#常見專案狀況" class="headerlink" title="常見專案狀況"></a>常見專案狀況</h2><ul>
+<li><p>如何撤銷當前 Commit</p>
+</li>
+<li><p>How to change the author and committer name and e-mail of multiple commits in Git?</p>
+</li>
+</ul>
+<pre><code>
+// 全域作者設定
+$ git config --global user.name &quot;Eddie Kao&quot;
+$ git config --global user.email &quot;eddie@5xruby.tw&quot;
 
-// 通過全局函數
-session(['key' => 'value']);
+// 查看設定檔
+$ git config --list
+
+
+// 【狀況題】可以每個專案設定不同的作者嗎？
+$ git config --local user.name Sherly
+$ git config --local user.email sherly@5xruby.tw
+
+這樣一來，在這個專案進行操作的時候，就會使用特別幫這個專案設定的使用者名稱及 Email 來進行操作。離開這個專案後的 Git 操作，就還是會使用預設的 Global 設定。
 
 </code></pre>
-
             </div>
             <hr>
 
@@ -531,7 +496,7 @@ session(['key' => 'value']);
                     <span class="reprint-tip">Reprint please specify: </span>
                     <a href="http://yoursite.com" class="b-link-green">12月每天一文</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/02/2018-12-2-Laravel-Session/" class="b-link-green">Laravel Session 機制</a>
+                    <a href="/2018/12/04/2018-12-4-Gitflow-SourceTree/" class="b-link-green">入門 Gitflow 和 SourceTree</a>
                 </p>
             </div>
         </div>
@@ -551,24 +516,26 @@ session(['key' => 'value']);
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
-                <a href="/2018/12/08/2018-12-4-Gitflow-SourceTree/">
+                <a href="/2018/12/04/2018-12-4-Gitflow-SourceTree/">
                     <div class="card-image">
                         
-                        <img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E9%A6%96%E5%9C%96%2F2018-12-4-GitFlow-SourceTree.png?alt=media&amp;token=0bd4404f-4dd6-4e79-9666-b8e5dea445c2" class="responsive-img" alt="入門 SourceTree">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E9%A6%96%E5%9C%96%2F2018-12-4-GitFlow-SourceTree.png?alt=media&amp;token=0bd4404f-4dd6-4e79-9666-b8e5dea445c2" class="responsive-img" alt="入門 Gitflow 和 SourceTree">
                         
-                        <span class="card-title">入門 SourceTree</span>
+                        <span class="card-title">入門 Gitflow 和 SourceTree</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">前言最近剛到職上班，公司用 SourceTree 當作 Git 圖形化工具，這邊記錄一些入門技巧。
-實作步驟
-初始環境為 Clone 下 Github 的遠端 Repo 。我的專案內只有 index.html 檔，並且有一次提交紀錄，此時 </div>
+                    <div class="summary">
+初始環境為 Clone 下 Github 的遠端 Repo 。我的專案內只有 index.html 檔，並且有一次提交紀錄，此時 History 畫面如下。可以看到目前的 Graph 有三個 Mark ，解釋如下方。 
+
+
+master </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -581,6 +548,7 @@ session(['key' => 'value']);
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -601,26 +569,19 @@ session(['key' => 'value']);
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/12/01/2018-12-1-laravel-formvarify/">
+                <a href="/2018/12/02/2018-12-2-Laravel-Session/">
                     <div class="card-image">
                         
-                        <img src="https://github.com/YangYangXun/ProjectImage/blob/master/EcommerceFashe/cart.png?raw=true" class="responsive-img" alt="Laravel 表單驗證">
+                        <img src="https://img.itw01.com/images/20171105/013720rYafdS_V5UOEGV.jpg!r1024x0.jpg" class="responsive-img" alt="Laravel Session 機制">
                         
-                        <span class="card-title">Laravel 表單驗證</span>
+                        <span class="card-title">Laravel Session 機制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Laravel 表單驗證
-在laravel中，其實可以說是有兩種方式來進行表單驗證：使用 Request 和使用 Validation 。
-5.5 新增 make rule 方式
-
-Request 表單驗證
-使用artisan這個工具
-
-p</div>
+                    <div class="summary">前言HTTP 是無狀態的，所以需要有一種能夠在請求之間紀錄狀態的法，透過這種紀錄的方法網站系統才能夠判別使用者目前狀態 ( 登入 登出 權限等…)，因此 Session 就誕生拉。Session 提供了一個在多個請求之間儲存有關用戶訊息的方</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-02
                             </span>
                         <span class="publish-author">
                             
@@ -639,6 +600,10 @@ p</div>
                     
                     <a href="/tags/Laravel/" target="_blank">
                         <span class="chip bg-color">Laravel</span>
+                    </a>
+                    
+                    <a href="/tags/Session/" target="_blank">
+                        <span class="chip bg-color">Session</span>
                     </a>
                     
                 </div>
