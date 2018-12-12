@@ -5,15 +5,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Laravel 表單驗證, 12月三天一文">
-    <meta name="description" content="
-在laravel中，其實可以說是有兩種方式來進行表單驗證：使用 Request 和使用 Validation 。
-5.5 新增 make Rule 方式
+    <meta name="keywords" content="Vargnat 入門與簡介, 12月三天一文">
+    <meta name="description" content="Vagrant 入門與簡介Vagrant 是什麼？
+用來建構跨平台虛擬開發環境的工具，並且提供可配置、可再生、可攜性佳的環境。
 
-Request 表單驗證
-使用artisan這個工具
 
-php artisan m">
+在部署軟體服務的階段，開發人員常常會利用虛擬主機來模擬及配置開發環境。Vagrant 就是基於這樣的需求產生">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +18,7 @@ php artisan m">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Laravel 表單驗證 | 12月三天一文</title>
+    <title>Vargnat 入門與簡介 | 12月三天一文</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -254,13 +251,13 @@ php artisan m">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('https://github.com/YangYangXun/ProjectImage/blob/master/EcommerceFashe/cart.png?raw=true')">
+<div class="bg-cover post-cover" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E9%A6%96%E5%9C%96%2F2018-12-12-Vargant.png?alt=media&token=481ebca9-044d-4366-a3b8-72c983512d23')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Laravel 表單驗證
+                        Vargnat 入門與簡介
                     </div>
                 </div>
             </div>
@@ -371,8 +368,8 @@ php artisan m">
             
             <div class="article-tag">
                 
-                <a href="/tags/Laravel/" target="_blank">
-                    <span class="chip bg-color">Laravel</span>
+                <a href="/tags/Vargant/" target="_blank">
+                    <span class="chip bg-color">Vargant</span>
                 </a>
                 
             </div>
@@ -382,140 +379,71 @@ php artisan m">
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/Backed-End/" class="post-category" target="_blank">
-                        Backed-End
+                    <a href="/categories/Development-Tools/" class="post-category" target="_blank">
+                        Development Tools
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-01
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-12
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li>在laravel中，其實可以說是有兩種方式來進行表單驗證：使用 Request 和使用 Validation 。</li>
-<li>5.5 新增 make Rule 方式</li>
-</ul>
-<h2 id="Request-表單驗證"><a href="#Request-表單驗證" class="headerlink" title="Request 表單驗證"></a>Request 表單驗證</h2><ul>
-<li>使用artisan這個工具</li>
-</ul>
-<p><code>php artisan make:request TestRequest</code></p>
+                <h1 id="Vagrant-入門與簡介"><a href="#Vagrant-入門與簡介" class="headerlink" title="Vagrant 入門與簡介"></a>Vagrant 入門與簡介</h1><h2 id="Vagrant-是什麼？"><a href="#Vagrant-是什麼？" class="headerlink" title="Vagrant 是什麼？"></a>Vagrant 是什麼？</h2><blockquote>
+<p>用來建構跨平台虛擬開發環境的工具，並且提供可配置、可再生、可攜性佳的環境。</p>
+</blockquote>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Developmant_Tools%2Fvargnat-1.png?alt=media&amp;token=558bb8b8-b991-4e72-92c2-d57557da80e9" alt=""></p>
+<p>在部署軟體服務的階段，開發人員常常會利用虛擬主機來模擬及配置開發環境。Vagrant 就是基於這樣的需求產生的一個服務。與傳統使用 VirtualBox 透過圖形使用者介面 (Graphical User Interface, GUI) 操作虛擬主機有一點不同的是，Vagrant 主要是使用命令列介面 (command-line interface, CLI) 來與虛擬主機做溝通。因此，我們在接下來的章節中將會運用大量的命令列來進行操作。</p>
+<p>Vagrant 的主要作用是提供一個可配置、可移植和復用的軟件環境。Vagrant 讓你通過編寫一個Vagrantfile 文件來控制虛擬機的啟動、虛擬機網絡環境的配置、虛擬機與主機間的文件共享，以及啟動後自動執行一些配置腳本，如自動執行一個Shell Script 來安裝一些必備的開發工具，如安裝配置MySQL、PHP，甚至是自動配置Nginx 站點。這意味著，在一個多人開發的項目中，你只需要同步Vagrantfile 文件，就可以保證參與項目的每個人各自的機器上擁有一致的開發環境。</p>
+<h2 id="Vagrant-解決了甚麼問題？"><a href="#Vagrant-解決了甚麼問題？" class="headerlink" title="Vagrant 解決了甚麼問題？"></a>Vagrant 解決了甚麼問題？</h2><blockquote>
+<p>讓 “在我的電腦上明明能跑” 這種說詞成為歷史。</p>
+</blockquote>
+<h2 id="Vagrant-原理"><a href="#Vagrant-原理" class="headerlink" title="Vagrant 原理"></a>Vagrant 原理</h2><p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Developmant_Tools%2Fvargant-2.png?alt=media&amp;token=5332ae1c-1159-45e5-a01a-6e0850b50f41" alt=""></p>
+<p>我們可以通過 Vagrant 封裝一個 Linux 的開發環境分發給團隊成員。成員可以在自己喜歡的桌面系統（Mac/Windows/Linux）上開發程序，代碼卻能統一在封裝好的環境裡運行，非常威猛。</p>
+<h2 id="Vagrant-優勢"><a href="#Vagrant-優勢" class="headerlink" title="Vagrant 優勢"></a>Vagrant 優勢</h2><ol>
+<li>容易創建 vagrant up</li>
+<li>方便打包分發 vargrant package</li>
+<li>有 vagrantFile 管理開發環境</li>
+</ol>
+<h2 id="Vagrant-常用命令列"><a href="#Vagrant-常用命令列" class="headerlink" title="Vagrant 常用命令列"></a>Vagrant 常用命令列</h2><ol>
+<li><p>Vagrant 版本</p>
+<p> <code>$ vagrant version</code></p>
+</li>
+<li><p>初始化 Vagrant box</p>
+<p> <code>$ vagrant init hashicorp/precise64</code></p>
 <ul>
-<li>注意細節</li>
+<li>初始化 Vagrantfile</li>
 </ul>
-<ol>
-<li>Laravel CSRF 保護，送表單需加上 @csrf </li>
-<li>表單 action 寫法<pre class="line-numbers language-php"><code class="language-php">為路由命名 <span class="token punctuation">:</span> <span class="token operator">*</span><span class="token operator">*</span> action <span class="token operator">=</span> <span class="token string">"{{ route('form.store') }}"</span> （推薦）<span class="token operator">*</span><span class="token operator">*</span>
-直接鏈結控制器 <span class="token punctuation">:</span> <span class="token operator">*</span><span class="token operator">*</span> action <span class="token operator">=</span> <span class="token string">"{{ action('Form\FormController@store')}}"</span> <span class="token operator">*</span><span class="token operator">*</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>啟動虛擬機</p>
+<p> <code>$ vagrant up</code></p>
+</li>
+<li><p>透過 SSH 登入虛擬機</p>
+<p> <code>$ vagrant ssh</code></p>
+</li>
+<li><p>加入 Vagrant boxes</p>
+<p> <code>$ vagrant box add &lt;box_name&gt; &lt;box_url&gt;</code></p>
+</li>
+<li><p>檢查一下目前所有安裝在本機的 Vagrant boxes</p>
+<p> <code>$ vagrant box list</code></p>
+</li>
+<li><p>關機</p>
+<p> <code>$ vagrant halt</code></p>
+</li>
+<li><p>如果掛載的設定有改動請使用</p>
+<p> <code>$ vagrant reload --provision</code></p>
+</li>
+<li><p>查看虛擬機運行狀態</p>
+<p> <code>$ vagrant status</code></p>
 </li>
 </ol>
-<ul>
-<li>File</li>
-</ul>
-<pre class="line-numbers language-php"><code class="language-php">
-<span class="token keyword">class</span> <span class="token class-name">TestRequest</span> <span class="token keyword">extends</span> <span class="token class-name">FormRequest</span>
-<span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/**
-     * Determine if the user is authorized to make this request.
-     * 
-     * @return bool
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">authorize</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-     <span class="token comment" spellcheck="true">/**
-        authorize()可以這樣簡單地理解：我們在處理這個表單請求(通常是一個post請求)的時候是否是需要進行身份驗證，這種驗證是指：比如A發表的評論，B能不能進行編輯。如果不能，則保留返回false，如果可以，則修改返回true。那麼我們這裡的邏輯是：既然是發表文章，在我們這個站點註冊的用戶(如果開放註冊的話)都是可以發表文章的，所以我們首先修改authorize()方法，將其返回值改為：return true;。*/</span>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>這次會學習 Vargant 主要是因為 Laravel 的 Homestead 環境配置需要用到，未來有機會會再來補充更多。</p>
 
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">rules</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">[</span>
-            <span class="token comment" spellcheck="true">//</span>
-        <span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Validation-表單驗證"><a href="#Validation-表單驗證" class="headerlink" title="Validation 表單驗證"></a>Validation 表單驗證</h2><ul>
-<li>使用 ValidatesRequestsTrait 的 validate 方法</li>
-</ul>
-<pre class="line-numbers language-php"><code class="language-php">
- v5<span class="token number">.6</span>
-
- <span class="token variable">$validatedData</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-    <span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required|unique:posts|max:255'</span><span class="token punctuation">,</span>
-    <span class="token string">'body'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required'</span><span class="token punctuation">,</span>
- <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
- v5<span class="token number">.4</span>
-
- <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
-    <span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required|unique:posts|max:255'</span><span class="token punctuation">,</span>
-    <span class="token string">'body'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required'</span><span class="token punctuation">,</span>
-    <span class="token string">'publish_at'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'nullable|date'</span><span class="token punctuation">,</span>
- <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>如果你不想要使用請求上使用 validate 方法，你可以通過 validator Validator facade 手動創建一個驗證器實例。用 Facade 上的 make 方法生成一個新的驗證器實例：</li>
-</ul>
-<pre class="line-numbers language-php"><code class="language-php">
-<span class="token delimiter">&lt;?php</span>
-
-<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
-
-<span class="token keyword">use</span> <span class="token package">Validator</span><span class="token punctuation">;</span>
-<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
-<span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Controller</span><span class="token punctuation">;</span>
-
-<span class="token keyword">class</span> <span class="token class-name">PostController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
-<span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/**
-     * 保存一篇新的博客文章。
-     *
-     * @param  Request  $request
-     * @return Response
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">store</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-
-        <span class="token comment" spellcheck="true">// 傳給 make 方法的第一個參數是要驗證的數據。第二個參數則是該數據的驗證規則。</span>
-        <span class="token variable">$validator</span> <span class="token operator">=</span> Validator<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
-            <span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required|unique:posts|max:255'</span><span class="token punctuation">,</span>
-            <span class="token string">'body'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required'</span><span class="token punctuation">,</span>
-        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$validator</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">fails</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">'post/create'</span><span class="token punctuation">)</span>
-                        <span class="token operator">-</span><span class="token operator">></span><span class="token function">withErrors</span><span class="token punctuation">(</span><span class="token variable">$validator</span><span class="token punctuation">)</span>
-                        <span class="token operator">-</span><span class="token operator">></span><span class="token function">withInput</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token comment" spellcheck="true">// 保存文章...</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="可用驗證規則"><a href="#可用驗證規則" class="headerlink" title="可用驗證規則"></a>可用驗證規則</h2><ul>
-<li><code>Unique</code> : 驗證的字段在給定的數據庫表中必須是唯一的。如果沒有指定 column ，將會使用字段本身的名稱。<pre><code>&#39;email&#39; =&gt; &#39;unique:users,email_address&#39;
-</code></pre></li>
-</ul>
-<h2 id="顯示驗證錯誤信息"><a href="#顯示驗證錯誤信息" class="headerlink" title="顯示驗證錯誤信息"></a>顯示驗證錯誤信息</h2><p>如果傳入的請求參數未通過給定的驗證規則呢？正如前面所提到的，Laravel會自動把用戶重定向到之前的位置。另外，<strong>所有的驗證錯誤信息會被自動閃存到session</strong> .</p>
-<p>重申一次，我們不必在GET路由中將錯誤消息顯式綁定到視圖。<strong>因為Lavarel會檢查在Session數據中的錯誤信息，並自動將其綁定到視圖</strong>（如果這個視圖文件存在）。而其中的變量 $errors 是Illuminate\Support\MessageBag 的一個實例。</p>
-<h2 id="處理錯誤消息"><a href="#處理錯誤消息" class="headerlink" title="處理錯誤消息"></a>處理錯誤消息</h2>
             </div>
             <hr>
 
@@ -536,7 +464,7 @@ php artisan m">
                     <span class="reprint-tip">Reprint please specify: </span>
                     <a href="http://yoursite.com" class="b-link-green">12月三天一文</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/01/2018-12-1-laravel-formvarify/" class="b-link-green">Laravel 表單驗證</a>
+                    <a href="/2018/12/12/2018-12-12-Vargant/" class="b-link-green">Vargnat 入門與簡介</a>
                 </p>
             </div>
         </div>
@@ -556,43 +484,44 @@ php artisan m">
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
-                <a href="/2018/12/02/2018-12-2-Laravel-Session/">
+                <a href="/2018/12/12/2018-12-12-Vargant/">
                     <div class="card-image">
                         
-                        <img src="https://img.itw01.com/images/20171105/013720rYafdS_V5UOEGV.jpg!r1024x0.jpg" class="responsive-img" alt="Laravel Session 機制">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E9%A6%96%E5%9C%96%2F2018-12-12-Vargant.png?alt=media&amp;token=481ebca9-044d-4366-a3b8-72c983512d23" class="responsive-img" alt="Vargnat 入門與簡介">
                         
-                        <span class="card-title">Laravel Session 機制</span>
+                        <span class="card-title">Vargnat 入門與簡介</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">前言HTTP 是無狀態的，所以需要有一種能夠在請求之間紀錄狀態的法，透過這種紀錄的方法網站系統才能夠判別使用者目前狀態 ( 登入 登出 權限等…)，因此 Session 就誕生拉。Session 提供了一個在多個請求之間儲存有關用戶訊息的方</div>
+                    <div class="summary">Vagrant 入門與簡介Vagrant 是什麼？
+用來建構跨平台虛擬開發環境的工具，並且提供可配置、可再生、可攜性佳的環境。
+
+
+在部署軟體服務的階段，開發人員常常會利用虛擬主機來模擬及配置開發環境。Vagrant 就是基於這樣的需求產生</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Backed-End/" class="post-category" target="_blank">
-                                    Backed-End
+                            <a href="/categories/Development-Tools/" class="post-category" target="_blank">
+                                    Development Tools
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Laravel/" target="_blank">
-                        <span class="chip bg-color">Laravel</span>
-                    </a>
-                    
-                    <a href="/tags/Session/" target="_blank">
-                        <span class="chip bg-color">Session</span>
+                    <a href="/tags/Vargant/" target="_blank">
+                        <span class="chip bg-color">Vargant</span>
                     </a>
                     
                 </div>
@@ -604,27 +533,28 @@ php artisan m">
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/12/01/hello-world/">
+                <a href="/2018/12/08/2018-12-4-Gitflow-SourceTree/">
                     <div class="card-image">
                         
+                        <img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E9%A6%96%E5%9C%96%2F2018-12-4-GitFlow-SourceTree.png?alt=media&amp;token=96cfb2d7-1a39-40fe-9002-1e00a1af2a67" class="responsive-img" alt="入門 SourceTree">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">入門 SourceTree</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary">前言最近剛到職上班，公司用 SourceTree 當作 Git 圖形化工具，這邊記錄一些入門技巧。
+實作步驟
+初始環境為 Clone 下 Github 的遠端 Repo 。我的專案內只有 index.html 檔，並且有一次提交紀錄，此時 </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/design/" class="post-category" target="_blank">
-                                    design
+                            <a href="/categories/Development-Tools/" class="post-category" target="_blank">
+                                    Development Tools
                                 </a>
                             
                             
@@ -634,8 +564,12 @@ php artisan m">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/test/" target="_blank">
-                        <span class="chip bg-color">test</span>
+                    <a href="/tags/Git/" target="_blank">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                    <a href="/tags/SourceTree/" target="_blank">
+                        <span class="chip bg-color">SourceTree</span>
                     </a>
                     
                 </div>
