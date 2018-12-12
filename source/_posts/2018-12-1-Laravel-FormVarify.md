@@ -7,16 +7,24 @@ category: Backed-End
 tag: Laravel
 ---
 
-# Laravel 表單驗證
 
 * 在laravel中，其實可以說是有兩種方式來進行表單驗證：使用 Request 和使用 Validation 。
-* 5.5 新增 make rule 方式
+* 5.5 新增 make Rule 方式
 
 ## Request 表單驗證
 
 * 使用artisan這個工具
 
 `php artisan make:request TestRequest`
+
+* 注意細節
+
+1. Laravel CSRF 保護，送表單需加上 @csrf 
+2. 表單 action 寫法
+   ```php
+   為路由命名 : ** action = "{{ route('form.store') }}" （推薦）**
+   直接鏈結控制器 : ** action = "{{ action('Form\FormController@store')}}" **
+   ```
 
 * File
 
@@ -31,12 +39,8 @@ class TestRequest extends FormRequest
      */
     public function authorize()
     {
-     /**  
-        authorize()可以這樣簡單地理解：我們在處理這個表單請求(通常是一個post請求)的時候是否是需要進行身份驗證，這種驗證是指：  
-        比如A發表的評論，B能不能進行編輯。如果不能，則保留返回false，如果可以，則修改返回true。  
-        那麼我們這裡的邏輯是：既然是發表文章，在我們這個站點註冊的用戶(如果開放註冊的話)都是可以發表文章的，  
-        所以我們首先修改authorize()方法，將其返回值改為：return true;。  
-      */
+     /**
+        authorize()可以這樣簡單地理解：我們在處理這個表單請求(通常是一個post請求)的時候是否是需要進行身份驗證，這種驗證是指：比如A發表的評論，B能不能進行編輯。如果不能，則保留返回false，如果可以，則修改返回true。那麼我們這裡的邏輯是：既然是發表文章，在我們這個站點註冊的用戶(如果開放註冊的話)都是可以發表文章的，所以我們首先修改authorize()方法，將其返回值改為：return true;。*/
         
         return false;
     }
@@ -142,54 +146,4 @@ class PostController extends Controller
 
 
 
-## Google ReCAPTCHA 我不是機器人
-
-* reCAPTCHA 本來專做 CAPTCHA 的公司, 在 2009 年被 Google 收購
-主要的目的大部是為了防止機器人濫用服務、大量留言等問題
-我們會為了防止這些問題, 請使用者輸入一些被混淆過的文字、圖形字進判斷使用者是不是真人.... , 其中最明顯的受害者就是線上訂票系統.
-* Google最早之前是使用reCAPTCHA v1，必須要輸入圖形驗證碼後才能夠通過驗證，而就在今年(2018/03/31)，Google正式取消reCAPTCHA v1的使用
-* reCAPTCHA v2
-
-
-##  請先向Google大神申請一組reCAPTCHA驗證碼
-
-填寫Google reCAPTCHA申請表單 - https://www.google.com/recaptcha/admin
-Label： 填入標籤文字以便日後辨識哪一組reCAPTCHA是屬於那一類用途
-
-Domains：可填入多組網域名，每換一行為一組，以dev.neticrm.tw為例
-
-
-點擊Register
-
-申請成功！至Adding reCAPTCHA to your site區塊中，取得兩個金鑰：Site key及Secret Key(如下圖中被黃色矩形覆蓋的內容)
-
-
-
-* ref
-
-https://cola.workxplay.net/what-is-google-recaptcha/
-
-
-
-* Packagelist 
-* google/recaptcha
-* anhskohbo/no-captcha https://packagist.org/packages/anhskohbo/no-captcha
-```
-composer require google/recaptcha "~1.1"
-差異?
-composer require google/recaptcha "^1.2"
-
-"require": {
-    "google/recaptcha": "^1.2"
-}
-
-```
-
-
-* laravel make:rule 
-* 研究 laravel app\Rules
-
-```
-php artisan make:rule Captcha
-```
 

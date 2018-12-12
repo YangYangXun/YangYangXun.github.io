@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 12月每天一文
-subtitle:  Day Of Code
-description: Keep learning and thinking
+title: 12月三天一文
+subtitle:  Keep learning and thinking
+description: 
 keywords:
 author: Yang Xun
 language: 
@@ -48,7 +48,7 @@ highlight:
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
   theme: 'tomorrow'
-  line_number: false    # default false
+  line_number: true    # default false
   custom_css:
 
 # 全文搜索
