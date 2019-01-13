@@ -5,12 +5,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Vargnat 入門與簡介, 12月三天一文">
-    <meta name="description" content="Vagrant 入門與簡介Vagrant 是什麼？
-用來建構跨平台虛擬開發環境的工具，並且提供可配置、可再生、可攜性佳的環境。
+    <meta name="keywords" content="JavaScript 學習歷程 - 1.變數與型別, 12月三天一文">
+    <meta name="description" content="變數 (Variable)從大學時期到現在學過不少語言，變數是入門各種語言會在一開始碰到的。什麼是變數呢？變數幫助我們在 coding 解問題的過程中儲存重要資訊，主要分兩種：
 
-
-在部署軟體服務的階段，開發人員常常會利用虛擬主機來模擬及配置開發環境。Vagrant 就是基於這樣的需求產生">
+全域變數 (Global Variable) ： 所有範圍皆">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Vargnat 入門與簡介 | 12月三天一文</title>
+    <title>JavaScript 學習歷程 - 1.變數與型別 | 12月三天一文</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -251,13 +249,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E9%A6%96%E5%9C%96%2F2018-12-12-Vargant.png?alt=media&token=481ebca9-044d-4366-a3b8-72c983512d23')">
+<div class="bg-cover post-cover" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/JavaScript%20%E5%AD%B8%E7%BF%92%E6%AD%B7%E7%A8%8B%2Fjavascript-740x374.png?alt=media&token=10c2ca86-2d87-4e47-8ea2-95f6e86a9168')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Vargnat 入門與簡介
+                        JavaScript 學習歷程 - 1.變數與型別
                     </div>
                 </div>
             </div>
@@ -368,8 +366,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/Vargant/" target="_blank">
-                    <span class="chip bg-color">Vargant</span>
+                <a href="/tags/JavaScript/" target="_blank">
+                    <span class="chip bg-color">JavaScript</span>
                 </a>
                 
             </div>
@@ -379,70 +377,124 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/Development-Tools/" class="post-category" target="_blank">
-                        Development Tools
+                    <a href="/categories/Front-End/" class="post-category" target="_blank">
+                        Front End
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-12
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-13
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Vagrant-入門與簡介"><a href="#Vagrant-入門與簡介" class="headerlink" title="Vagrant 入門與簡介"></a>Vagrant 入門與簡介</h1><h2 id="Vagrant-是什麼？"><a href="#Vagrant-是什麼？" class="headerlink" title="Vagrant 是什麼？"></a>Vagrant 是什麼？</h2><blockquote>
-<p>用來建構跨平台虛擬開發環境的工具，並且提供可配置、可再生、可攜性佳的環境。</p>
-</blockquote>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Developmant_Tools%2Fvargnat-1.png?alt=media&amp;token=558bb8b8-b991-4e72-92c2-d57557da80e9" alt=""></p>
-<p>在部署軟體服務的階段，開發人員常常會利用虛擬主機來模擬及配置開發環境。Vagrant 就是基於這樣的需求產生的一個服務。與傳統使用 VirtualBox 透過圖形使用者介面 (Graphical User Interface, GUI) 操作虛擬主機有一點不同的是，Vagrant 主要是使用命令列介面 (command-line interface, CLI) 來與虛擬主機做溝通。因此，我們在接下來的章節中將會運用大量的命令列來進行操作。</p>
-<p>Vagrant 的主要作用是提供一個可配置、可移植和復用的軟件環境。Vagrant 讓你通過編寫一個Vagrantfile 文件來控制虛擬機的啟動、虛擬機網絡環境的配置、虛擬機與主機間的文件共享，以及啟動後自動執行一些配置腳本，如自動執行一個Shell Script 來安裝一些必備的開發工具，如安裝配置MySQL、PHP，甚至是自動配置Nginx 站點。這意味著，在一個多人開發的項目中，你只需要同步Vagrantfile 文件，就可以保證參與項目的每個人各自的機器上擁有一致的開發環境。</p>
-<h2 id="Vagrant-解決了甚麼問題？"><a href="#Vagrant-解決了甚麼問題？" class="headerlink" title="Vagrant 解決了甚麼問題？"></a>Vagrant 解決了甚麼問題？</h2><blockquote>
-<p>讓 “在我的電腦上明明能跑” 這種說詞成為歷史。</p>
-</blockquote>
-<h2 id="Vagrant-原理"><a href="#Vagrant-原理" class="headerlink" title="Vagrant 原理"></a>Vagrant 原理</h2><p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Developmant_Tools%2Fvargant-2.png?alt=media&amp;token=5332ae1c-1159-45e5-a01a-6e0850b50f41" alt=""></p>
-<p>我們可以通過 Vagrant 封裝一個 Linux 的開發環境分發給團隊成員。成員可以在自己喜歡的桌面系統（Mac/Windows/Linux）上開發程序，代碼卻能統一在封裝好的環境裡運行，非常威猛。</p>
-<h2 id="Vagrant-優勢"><a href="#Vagrant-優勢" class="headerlink" title="Vagrant 優勢"></a>Vagrant 優勢</h2><ol>
-<li>容易創建 vagrant up</li>
-<li>方便打包分發 vargrant package</li>
-<li>有 vagrantFile 管理開發環境</li>
-</ol>
-<h2 id="Vagrant-常用命令列"><a href="#Vagrant-常用命令列" class="headerlink" title="Vagrant 常用命令列"></a>Vagrant 常用命令列</h2><ol>
-<li><p>Vagrant 版本</p>
-<p> <code>$ vagrant version</code></p>
-</li>
-<li><p>初始化 Vagrant box</p>
-<p> <code>$ vagrant init hashicorp/precise64</code></p>
+                <h2 id="變數-Variable"><a href="#變數-Variable" class="headerlink" title="變數 (Variable)"></a>變數 (Variable)</h2><p>從大學時期到現在學過不少語言，變數是入門各種語言會在一開始碰到的。什麼是變數呢？<br>變數幫助我們在 coding 解問題的過程中儲存重要資訊，主要分兩種：</p>
 <ul>
-<li>初始化 Vagrantfile</li>
+<li>全域變數 (Global Variable) ： 所有範圍皆能存取</li>
+<li>區域變數 (Local Variable) ： 只有在特定範圍內有效</li>
 </ul>
-</li>
-<li><p>啟動虛擬機</p>
-<p> <code>$ vagrant up</code></p>
-</li>
-<li><p>透過 SSH 登入虛擬機</p>
-<p> <code>$ vagrant ssh</code></p>
-</li>
-<li><p>加入 Vagrant boxes</p>
-<p> <code>$ vagrant box add &lt;box_name&gt; &lt;box_url&gt;</code></p>
-</li>
-<li><p>檢查一下目前所有安裝在本機的 Vagrant boxes</p>
-<p> <code>$ vagrant box list</code></p>
-</li>
-<li><p>關機</p>
-<p> <code>$ vagrant halt</code></p>
-</li>
-<li><p>如果掛載的設定有改動請使用</p>
-<p> <code>$ vagrant reload --provision</code></p>
-</li>
-<li><p>查看虛擬機運行狀態</p>
-<p> <code>$ vagrant status</code></p>
-</li>
+<h3 id="以-var-宣告變數"><a href="#以-var-宣告變數" class="headerlink" title="以 var 宣告變數"></a>以 var 宣告變數</h3><p>注意如果使用 var 宣告變數則只有在 function 中的宣告才會視為區域變數，<br>其餘如 if-else statement 及 for loop 等宣告皆會是為全域變數</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">
+<span class="token keyword">var</span> isProgrammer <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 全域</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>isProgrammer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> var_in_if <span class="token operator">=</span> <span class="token string">'say hello in if'</span> <span class="token comment" spellcheck="true">// 全域</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in if statement -> '</span> <span class="token operator">+</span> var_in_for<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// say hello in if</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> var_in_for <span class="token operator">=</span> <span class="token string">'say hello in for loop'</span> <span class="token comment" spellcheck="true">// 全域</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in for loop -> '</span> <span class="token operator">+</span> var_in_for<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// say hello in for loop</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> var_in_function <span class="token operator">=</span> <span class="token string">'var which delcare in function '</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in function  -> '</span> <span class="token operator">+</span> var_in_function<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in global area => '</span> <span class="token operator">+</span> var_in_if<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// say hello in if</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in global area => '</span> <span class="token operator">+</span> var_in_for<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// say hello in for </span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in global area => '</span> <span class="token operator">+</span> var_in_function<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// ReferenceError: var_in_function is not defined</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="ES6-新增-let-以及-const"><a href="#ES6-新增-let-以及-const" class="headerlink" title="ES6 新增 let 以及 const"></a>ES6 新增 let 以及 const</h3><ul>
+<li>let 區域分明，只要在 <code>{}</code> 中宣告的變數都是區域變數，可以免污染全域變數。</li>
+<li>const 是常數必須在宣告時給定初值，不能重新定值以及重新宣告。</li>
+</ul>
+<pre class="line-numbers language-javascript"><code class="language-javascript">
+<span class="token comment" spellcheck="true">// let 很適合用來當 for 迴圈變數使用</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> element <span class="token operator">=</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// const 必須在宣告時給予初值</span>
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token string">'a'</span>
+a <span class="token operator">=</span> <span class="token number">3</span> <span class="token comment" spellcheck="true">// TypeError: Assignment to constant variable.</span>
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token string">'a2'</span> <span class="token comment" spellcheck="true">// SyntaxError: Identifier 'a' has already been declared</span>
+<span class="token keyword">const</span> b <span class="token comment" spellcheck="true">// SyntaxError: Missing initializer in const declaration</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="型別-Type"><a href="#型別-Type" class="headerlink" title="型別 (Type)"></a>型別 (Type)</h2><p>JavaScript 弱型別語言，他對型別要求沒有這麼嚴謹，可以在過程中一再的做型別轉換。</p>
+<blockquote>
+<p><em>小觀念</em>：變數其實沒有型別，因為可能在過程中不斷轉換。<strong>值</strong>才有型別。</p>
+</blockquote>
+<ol>
+<li>Number</li>
+<li>String</li>
+<li>Boolean<br><del>4. Array</del></li>
+<li><strong>Object</strong></li>
+<li><strong>Null</strong></li>
+<li><strong>Undefined</strong></li>
+<li>Symbol (ES6)</li>
 </ol>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>這次會學習 Vargant 主要是因為 Laravel 的 Homestead 環境配置需要用到，未來有機會會再來補充更多。</p>
+<h3 id="使用-typeof-檢視型別"><a href="#使用-typeof-檢視型別" class="headerlink" title="使用 typeof 檢視型別"></a>使用 typeof 檢視型別</h3><pre class="line-numbers language-javascript"><code class="language-javascript">
+<span class="token comment" spellcheck="true">// 一些 typeof 範例</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token number">1234</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// number</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token number">12.34</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// number</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token number">0.1234</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// number</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token string">"1234"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// string</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token string">'1234'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// string</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// boolean</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// boolean</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// object</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// object</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// object ( JavaScript Bug )</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> undefined<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// undefined</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="null-與-undefined"><a href="#null-與-undefined" class="headerlink" title="null 與 undefined"></a>null 與 undefined</h3><ul>
+<li>null : 空值，變數其實有被指定一個值，只不過是空值</li>
+<li>undefined : 未定義，變數沒有被指定一個值</li>
+</ul>
+<p><strong>變數應避免設定為 undefined 而是 null，因為 undefine 常造成程式出錯</strong></p>
+<p><em>Q&amp;A：如何判斷是否為 null ?</em></p>
+<p>方法1 : 利用 falsy value</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>JavaScript falsy value 有</strong></p>
+<ul>
+<li>NaN</li>
+<li>0, -0</li>
+<li>“ “ 空字串</li>
+<li>undefined</li>
+<li>null</li>
+<li>false</li>
+</ul>
+<p>方法2 : 精確判斷可搭配 typeof </p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>！value <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 我是 null</span>
+<span class="token punctuation">}</span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>我覺得 JavaScript 的執行結果有許多出乎意料之處，唯有仔細了解背後原理才不會<br>落入深坑，進入痛苦的隕石開發。</p>
 
             </div>
             <hr>
@@ -464,7 +516,7 @@
                     <span class="reprint-tip">Reprint please specify: </span>
                     <a href="http://yoursite.com" class="b-link-green">12月三天一文</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/12/2018-12-12-Vargant/" class="b-link-green">Vargnat 入門與簡介</a>
+                    <a href="/2019/01/13/2019-01-13-JavaScript_1/" class="b-link-green">JavaScript 學習歷程 - 1.變數與型別</a>
                 </p>
             </div>
         </div>
@@ -484,7 +536,7 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2019/01/13/2019-01-13-JavaScript_1/">
                     <div class="card-image">
@@ -499,9 +551,9 @@
 
 全域變數 (Global Variable) ： 所有範圍皆</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -514,6 +566,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -530,21 +583,23 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/12/08/2018-12-4-Gitflow-SourceTree/">
+                <a href="/2018/12/12/2018-12-12-Vargant/">
                     <div class="card-image">
                         
-                        <img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E9%A6%96%E5%9C%96%2F2018-12-4-GitFlow-SourceTree.png?alt=media&amp;token=96cfb2d7-1a39-40fe-9002-1e00a1af2a67" class="responsive-img" alt="入門 SourceTree">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E9%A6%96%E5%9C%96%2F2018-12-12-Vargant.png?alt=media&amp;token=481ebca9-044d-4366-a3b8-72c983512d23" class="responsive-img" alt="Vargnat 入門與簡介">
                         
-                        <span class="card-title">入門 SourceTree</span>
+                        <span class="card-title">Vargnat 入門與簡介</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">前言最近剛到職上班，公司用 SourceTree 當作 Git 圖形化工具，這邊記錄一些入門技巧。
-實作步驟
-初始環境為 Clone 下 Github 的遠端 Repo 。我的專案內只有 index.html 檔，並且有一次提交紀錄，此時 </div>
+                    <div class="summary">Vagrant 入門與簡介Vagrant 是什麼？
+用來建構跨平台虛擬開發環境的工具，並且提供可配置、可再生、可攜性佳的環境。
+
+
+在部署軟體服務的階段，開發人員常常會利用虛擬主機來模擬及配置開發環境。Vagrant 就是基於這樣的需求產生</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-08
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-12
                             </span>
                         <span class="publish-author">
                             
@@ -561,12 +616,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/" target="_blank">
-                        <span class="chip bg-color">Git</span>
-                    </a>
-                    
-                    <a href="/tags/SourceTree/" target="_blank">
-                        <span class="chip bg-color">SourceTree</span>
+                    <a href="/tags/Vargant/" target="_blank">
+                        <span class="chip bg-color">Vargant</span>
                     </a>
                     
                 </div>

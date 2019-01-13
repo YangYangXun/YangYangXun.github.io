@@ -411,7 +411,7 @@
 <h2 id="以-Database-方式來存-Session"><a href="#以-Database-方式來存-Session" class="headerlink" title="以 Database 方式來存 Session"></a>以 Database 方式來存 Session</h2><h3 id="設定資料表"><a href="#設定資料表" class="headerlink" title="設定資料表"></a>設定資料表</h3><ul>
 <li>我們利用 Migrate 的方式來建立 sessions 資料表，Schema 如下 :</li>
 </ul>
-<pre class=" language-php"><code class="language-php">
+<pre class="line-numbers language-php"><code class="language-php">
 Schema<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string">'sessions'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">string</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">unique</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">unsignedInteger</span><span class="token punctuation">(</span><span class="token string">'user_id'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">nullable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -421,7 +421,7 @@ Schema<span class="token punctuation">:</span><span class="token punctuation">:<
     <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">integer</span><span class="token punctuation">(</span><span class="token string">'last_activity'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>使用 artisan 命令來 migrate</li>
 </ul>
@@ -446,23 +446,23 @@ Schema<span class="token punctuation">:</span><span class="token punctuation">:<
 <h3 id="獲取-Session"><a href="#獲取-Session" class="headerlink" title="獲取 Session"></a>獲取 Session</h3><ul>
 <li>如果你想要获取所有的 Session 数据，可以使用 all 方法：</li>
 </ul>
-<pre class=" language-php"><code class="language-php"> <span class="token variable">$data</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<pre class="line-numbers language-php"><code class="language-php"> <span class="token variable">$data</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Result :<br><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Laravel_Framework%2F2018-12-2-Laravel-HTTP-Session%2Fsession_all.jpg?alt=media&amp;token=e71b7234-b7c7-406d-b394-e494313ab12e" alt=""></p>
 <ul>
 <li>獲取 Sessio 中部份資料</li>
 </ul>
-<pre class=" language-php"><code class="language-php">
+<pre class="line-numbers language-php"><code class="language-php">
 <span class="token comment" spellcheck="true">// 得到 Token</span>
 <span class="token variable">$token</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'_token'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// 得到上一次請求的 URL</span>
 <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'_previous'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'url'</span><span class="token punctuation">]</span>
 
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>判断 Session 中是否存在某个值</li>
 </ul>
-<pre class=" language-php"><code class="language-php">
+<pre class="line-numbers language-php"><code class="language-php">
 <span class="token comment" spellcheck="true">// 存在且不為 null 可以用 has 判斷</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">has</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
@@ -472,7 +472,7 @@ Schema<span class="token punctuation">:</span><span class="token punctuation">:<
 <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="存儲數據"><a href="#存儲數據" class="headerlink" title="存儲數據"></a>存儲數據</h3><ul>
 <li>存入鍵值對到 Session 中有 2 種方法</li>
 </ul>
@@ -480,14 +480,14 @@ Schema<span class="token punctuation">:</span><span class="token punctuation">:<
 <li>通過請求實例</li>
 <li>通過全局函數</li>
 </ol>
-<pre class=" language-php"><code class="language-php">
+<pre class="line-numbers language-php"><code class="language-php">
 <span class="token comment" spellcheck="true">// 通過請求實例</span>
 <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// 通過全局函數</span>
 <span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'key'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>今天先簡單介紹，之後遇到相關問題會回來補充。</p>
 
             </div>
@@ -580,7 +580,7 @@ Schema<span class="token punctuation">:</span><span class="token punctuation">:<
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2018/12/01/2018-12-1-laravel-formvarify/">
+                <a href="/2018/12/01/2018-12-1-Laravel-FormVarify/">
                     <div class="card-image">
                         
                         <img src="https://github.com/YangYangXun/ProjectImage/blob/master/EcommerceFashe/cart.png?raw=true" class="responsive-img" alt="Laravel 表單驗證">
