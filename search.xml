@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>Vim 編輯器入門</title>
+      <link href="/2019/03/01/2018-03-01-Vim-Basic/"/>
+      <url>/2019/03/01/2018-03-01-Vim-Basic/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Vim-的設定檔"><a href="#Vim-的設定檔" class="headerlink" title="Vim 的設定檔"></a>Vim 的設定檔</h2><pre><code>家目錄底下 $ vim .vimrc</code></pre><p>所有 Vim 相關的設定都會在此更改</p><ul><li><code>set nu</code> : 顯示行號</li><li><code>set cursorcolumn</code> : 列光標</li><li><code>set cursorline</code> : 行光標</li><li><code>set ruler</code> : 會在狀態列顯示游標所在處之行列狀態，預設不打開，但建議打開</li></ul><h2 id="Vim-模式與操作"><a href="#Vim-模式與操作" class="headerlink" title="Vim 模式與操作"></a>Vim 模式與操作</h2><h3 id="Normal-模式"><a href="#Normal-模式" class="headerlink" title="Normal 模式"></a>Normal 模式</h3><ul><li><code>大寫 V</code> : 鍵入大寫 V 是游標經過一行就<strong>選擇一行</strong></li><li><code>小寫 v</code> : 小寫 v 則是游標經過的位置就選擇起來</li><li><code>小寫 y</code> : 按下小寫 y 可以<strong>複製</strong>起選擇的文字</li><li><code>小寫 d</code> : 按下 d 可以<strong>刪除</strong>掉選取的文字</li><li><code>小寫 p</code> : 要貼上文字的地方，按下 p 就可以<strong>貼上</strong>剛才複製好的文字</li><li><code>小寫 u</code> : 要復原剛才的動作，可以鍵入 u</li><li><code>/</code> : 要搜尋字串，可以在一般模式下輸入”/“，並在斜線後方鍵入要搜尋的字串，並按下 Enter。當找到一個符合的字串後，若要繼續往下搜尋，可以鍵入小寫 n。</li><li><code>gg</code> : 移到整份文件的最上方</li><li><code>G</code> : 移到整份文件的最下方</li><li><code>小寫 u</code> : 要復原剛才的動作，可以鍵入 u</li></ul><h3 id="Insert-模式"><a href="#Insert-模式" class="headerlink" title="Insert 模式"></a>Insert 模式</h3><ul><li><code>:wq</code> : 存檔後離開</li><li><code>:w</code> : 存檔</li><li><code>:q</code> : 離開</li><li><code>:qa!</code> : 強制離開</li></ul><h3 id="組合"><a href="#組合" class="headerlink" title="組合"></a>組合</h3><p><strong>上下移動當前行</strong></p><blockquote><p>ddkP</p></blockquote><ul><li>dd 將刪除該行並將它的添加到默認寄存器</li><li>k 將上移一行( j 將沿著一條線移動)</li><li>P 將粘貼到當前行的上方</li></ul><blockquote><p>:m +1 - 下移 1行<br>:m -2 - 上移 1行</p></blockquote><h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://kaochenlong.com/2011/12/28/vim-tips/" target="_blank" rel="noopener">高見龍：Vim的操作小技巧</a><br><a href="https://ithelp.ithome.com.tw/articles/10194528" target="_blank" rel="noopener">第 18 天：安裝/設定 Vim 編輯器</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Vim </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>JavaScript 學習歷程 - 1.變數與型別</title>
       <link href="/2019/01/13/2019-01-13-JavaScript_1/"/>
       <url>/2019/01/13/2019-01-13-JavaScript_1/</url>
