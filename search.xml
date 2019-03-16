@@ -3,9 +3,32 @@
   
     
     <entry>
+      <title>利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統</title>
+      <link href="/2019/03/16/2019-03-16-Linux-SSH/"/>
+      <url>/2019/03/16/2019-03-16-Linux-SSH/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>工作也差不多 4 個多月了，發現 Linux 很重要，這邊就紀錄一下最近學習 Linux 基礎的筆記。</p><h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><p><strong>版本：ubnutn 18.4 / Mac OS 10.14.3</strong></p><ol><li><p>下載 ssh 套件</p><blockquote><p>$ sudo apt-get install ssh</p></blockquote></li><li><p>查詢指令是否成功安裝 (按兩下 Tab)</p><blockquote><p>$ ss</p></blockquote></li></ol><p><img src="https://i.imgur.com/0pfHOiU.png" alt=""></p><ol start="3"><li>查詢 ssh 是否運作<blockquote><p>$ sudo systemctl status ssh</p></blockquote></li></ol><p><img src="https://i.imgur.com/DLI6Lhw.png" alt=""></p><ol start="4"><li>查詢 ip<blockquote><p>$ ip address</p></blockquote></li></ol><p><img src="https://i.imgur.com/peIMrBk.png" alt=""></p><ol start="5"><li>測試連入自己的 ssh<blockquote><p>$ ssh <a href="mailto:username@10.0.2.15" target="_blank" rel="noopener">username@10.0.2.15</a> </p></blockquote></li></ol><p><img src="https://i.imgur.com/H5TRYXq.png" alt=""></p><ol start="6"><li>嘗試從 Mac 連入 ubnutn<blockquote><p>$ ssh <a href="mailto:username@10.0.2.15" target="_blank" rel="noopener">username@10.0.2.15</a> </p></blockquote></li></ol><p>失敗，VM 屬於屬於內部網路，如果用此 ssh 方式連接會以外部網路做搜尋連線，所以是沒辦法連上的。</p><ol start="7"><li>解決，VM 設定 ssh 連結導向</li></ol><p><strong>VM 操作 ： 設定值 -&gt; 網路 -&gt; 進階 -&gt; 連接阜轉送</strong></p><p>設定 port 號映射，Mac 去看 8001 時會導到 ubnutn port 號</p><p><img src="https://i.imgur.com/ZB4IO0J.png" alt=""></p><ol start="8"><li>再次嘗試從 Mac 連入 ubnutn<blockquote><p>$ ssh <a href="mailto:username@127.0.0.1" target="_blank" rel="noopener">username@127.0.0.1</a> -p 8001</p></blockquote></li></ol><p><img src="https://i.imgur.com/c2Gd3nh.png" alt=""></p><h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><p>Q : 能否由 Mac 連進多台虛擬機器？<br>A : 可以，只要設定多個不同的 port 號映射即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Vim 編輯器入門</title>
-      <link href="/2019/03/01/2018-03-01-Vim-Basic/"/>
-      <url>/2019/03/01/2018-03-01-Vim-Basic/</url>
+      <link href="/2019/03/01/2019-03-01-Vim-Basic/"/>
+      <url>/2019/03/01/2019-03-01-Vim-Basic/</url>
       
         <content type="html"><![CDATA[<h2 id="Vim-的設定檔"><a href="#Vim-的設定檔" class="headerlink" title="Vim 的設定檔"></a>Vim 的設定檔</h2><pre><code>家目錄底下 $ vim .vimrc</code></pre><p>所有 Vim 相關的設定都會在此更改</p><ul><li><code>set nu</code> : 顯示行號</li><li><code>set cursorcolumn</code> : 列光標</li><li><code>set cursorline</code> : 行光標</li><li><code>set ruler</code> : 會在狀態列顯示游標所在處之行列狀態，預設不打開，但建議打開</li></ul><h2 id="Vim-模式與操作"><a href="#Vim-模式與操作" class="headerlink" title="Vim 模式與操作"></a>Vim 模式與操作</h2><h3 id="Normal-模式"><a href="#Normal-模式" class="headerlink" title="Normal 模式"></a>Normal 模式</h3><ul><li><code>大寫 V</code> : 鍵入大寫 V 是游標經過一行就<strong>選擇一行</strong></li><li><code>小寫 v</code> : 小寫 v 則是游標經過的位置就選擇起來</li><li><code>小寫 y</code> : 按下小寫 y 可以<strong>複製</strong>起選擇的文字</li><li><code>小寫 d</code> : 按下 d 可以<strong>刪除</strong>掉選取的文字</li><li><code>小寫 p</code> : 要貼上文字的地方，按下 p 就可以<strong>貼上</strong>剛才複製好的文字</li><li><code>小寫 u</code> : 要復原剛才的動作，可以鍵入 u</li><li><code>/</code> : 要搜尋字串，可以在一般模式下輸入”/“，並在斜線後方鍵入要搜尋的字串，並按下 Enter。當找到一個符合的字串後，若要繼續往下搜尋，可以鍵入小寫 n。</li><li><code>gg</code> : 移到整份文件的最上方</li><li><code>G</code> : 移到整份文件的最下方</li><li><code>小寫 u</code> : 要復原剛才的動作，可以鍵入 u</li></ul><h3 id="Insert-模式"><a href="#Insert-模式" class="headerlink" title="Insert 模式"></a>Insert 模式</h3><ul><li><code>:wq</code> : 存檔後離開</li><li><code>:w</code> : 存檔</li><li><code>:q</code> : 離開</li><li><code>:qa!</code> : 強制離開</li></ul><h3 id="組合"><a href="#組合" class="headerlink" title="組合"></a>組合</h3><p><strong>上下移動當前行</strong></p><blockquote><p>ddkP</p></blockquote><ul><li>dd 將刪除該行並將它的添加到默認寄存器</li><li>k 將上移一行( j 將沿著一條線移動)</li><li>P 將粘貼到當前行的上方</li></ul><blockquote><p>:m +1 - 下移 1行<br>:m -2 - 上移 1行</p></blockquote><h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://kaochenlong.com/2011/12/28/vim-tips/" target="_blank" rel="noopener">高見龍：Vim的操作小技巧</a><br><a href="https://ithelp.ithome.com.tw/articles/10194528" target="_blank" rel="noopener">第 18 天：安裝/設定 Vim 編輯器</a></p>]]></content>
       
