@@ -5,13 +5,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統, Yang&#39;s code blog">
-    <meta name="description" content="前言工作也差不多 4 個多月了，發現 Linux 很重要，這邊就紀錄一下最近學習 Linux 基礎的筆記。
-步驟版本：ubnutn 18.4 / Mac OS 10.14.3
-
-下載 ssh 套件
-
-$ sudo apt-get insta">
+    <meta name="keywords" content="使用 PHP Unit 進行測試, Yang&#39;s code blog">
+    <meta name="description" content="安裝 PHP Unit$ composer require phpunit/phpunit
+建立 app 目錄夾與測試目錄夾application                // 主要目錄  
+├── app              ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +16,7 @@ $ sudo apt-get insta">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統 | Yang&#39;s code blog</title>
+    <title>使用 PHP Unit 進行測試 | Yang&#39;s code blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -252,13 +249,13 @@ $ sudo apt-get insta">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('https://i.imgur.com/zYCtMLO.png')">
+<div class="bg-cover post-cover" style="background-image: url('https://i.imgur.com/KlY9wSP.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統
+                        使用 PHP Unit 進行測試
                     </div>
                 </div>
             </div>
@@ -369,8 +366,12 @@ $ sudo apt-get insta">
             
             <div class="article-tag">
                 
-                <a href="/tags/Linux/" target="_blank">
-                    <span class="chip bg-color">Linux</span>
+                <a href="/tags/PHP/" target="_blank">
+                    <span class="chip bg-color">PHP</span>
+                </a>
+                
+                <a href="/tags/UnitTest/" target="_blank">
+                    <span class="chip bg-color">UnitTest</span>
                 </a>
                 
             </div>
@@ -380,78 +381,81 @@ $ sudo apt-get insta">
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/Linux/" class="post-category" target="_blank">
-                        Linux
+                    <a href="/categories/PHP/" class="post-category" target="_blank">
+                        PHP
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-03-16
+                    <i class="fa fa-clock-o fa-fw"></i>2019-03-24
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>工作也差不多 4 個多月了，發現 Linux 很重要，這邊就紀錄一下最近學習 Linux 基礎的筆記。</p>
-<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><p><strong>版本：ubnutn 18.4 / Mac OS 10.14.3</strong></p>
-<ol>
-<li><p>下載 ssh 套件</p>
-<blockquote>
-<p>$ sudo apt-get install ssh</p>
-</blockquote>
-</li>
-<li><p>查詢指令是否成功安裝 (按兩下 Tab)</p>
-<blockquote>
-<p>$ ss</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="https://i.imgur.com/0pfHOiU.png" alt=""></p>
-<ol start="3">
-<li>查詢 ssh 是否運作<blockquote>
-<p>$ sudo systemctl status ssh</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="https://i.imgur.com/DLI6Lhw.png" alt=""></p>
-<ol start="4">
-<li>查詢 ip<blockquote>
-<p>$ ip address</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="https://i.imgur.com/peIMrBk.png" alt=""></p>
-<ol start="5">
-<li>測試連入自己的 ssh<blockquote>
-<p>$ ssh <a href="mailto:username@10.0.2.15" target="_blank" rel="noopener">username@10.0.2.15</a> </p>
-</blockquote>
-</li>
-</ol>
-<p><img src="https://i.imgur.com/H5TRYXq.png" alt=""></p>
-<ol start="6">
-<li>嘗試從 Mac 連入 ubnutn<blockquote>
-<p>$ ssh <a href="mailto:username@10.0.2.15" target="_blank" rel="noopener">username@10.0.2.15</a> </p>
-</blockquote>
-</li>
-</ol>
-<p>失敗，VM 屬於屬於內部網路，如果用此 ssh 方式連接會以外部網路做搜尋連線，所以是沒辦法連上的。</p>
-<ol start="7">
-<li>解決，VM 設定 ssh 連結導向</li>
-</ol>
-<p><strong>VM 操作 ： 設定值 -&gt; 網路 -&gt; 進階 -&gt; 連接阜轉送</strong></p>
-<p>設定 port 號映射，Mac 去看 8001 時會導到 ubnutn port 號</p>
-<p><img src="https://i.imgur.com/ZB4IO0J.png" alt=""></p>
-<ol start="8">
-<li>再次嘗試從 Mac 連入 ubnutn<blockquote>
-<p>$ ssh <a href="mailto:username@127.0.0.1" target="_blank" rel="noopener">username@127.0.0.1</a> -p 8001</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="https://i.imgur.com/c2Gd3nh.png" alt=""></p>
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><p>Q : 能否由 Mac 連進多台虛擬機器？<br>A : 可以，只要設定多個不同的 port 號映射即可。</p>
+                <h2 id="安裝-PHP-Unit"><a href="#安裝-PHP-Unit" class="headerlink" title="安裝 PHP Unit"></a>安裝 PHP Unit</h2><pre><code>$ composer require phpunit/phpunit
+</code></pre><h2 id="建立-app-目錄夾與測試目錄夾"><a href="#建立-app-目錄夾與測試目錄夾" class="headerlink" title="建立 app 目錄夾與測試目錄夾"></a>建立 app 目錄夾與測試目錄夾</h2><pre><code>application                // 主要目錄  
+├── app                  // 你存放 PHP 專案的資料夾
+│    ├── demo.php       // 你的 PHP 程式
+│    ├── demo2.php
+│    └── demo3.php
+├── tests                // 存放測試單元的資料夾
+└── phpunit.xml         // 用來設置 PHPUnit 的檔案
+
+</code></pre><h2 id="配置-psr-4"><a href="#配置-psr-4" class="headerlink" title="配置 psr-4"></a>配置 psr-4</h2><p>composer.json 檔設定，加入 autoload</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"require"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"phpunit/phpunit"</span><span class="token operator">:</span> <span class="token string">"^7.5"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"autoload"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"psr-4"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">"App\\"</span><span class="token operator">:</span> <span class="token string">"app"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>執行</p>
+<pre><code>$ composer dump-autoload -o
+</code></pre><h2 id="配置-phpunit-xml"><a href="#配置-phpunit-xml" class="headerlink" title="配置 phpunit.xml"></a>配置 phpunit.xml</h2><p>新增 phpunit.xml</p>
+<pre class="line-numbers language-xml"><code class="language-xml">
+<span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>phpunit</span> <span class="token attr-name">bootstrap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vendor/autoload.php<span class="token punctuation">"</span></span>
+         <span class="token attr-name">colors</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
+         <span class="token attr-name">verbose</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
+         <span class="token attr-name">stopOnFailure</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>testsuites</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>testsuite</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Test suite<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>directory</span><span class="token punctuation">></span></span>tests<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>directory</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>testsuite</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>testsuites</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>phpunit</span><span class="token punctuation">></span></span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>配置完後執行</p>
+<pre><code>$ ./vendor/bin/phpunit
+</code></pre><p>可看見下方結果</p>
+<p><img src="https://i.imgur.com/oJ6q7o4.png" alt=""></p>
+<h2 id="建立第一個測試類別"><a href="#建立第一個測試類別" class="headerlink" title="建立第一個測試類別"></a>建立第一個測試類別</h2><pre class="line-numbers language-php"><code class="language-php"><span class="token comment" spellcheck="true">// SampleTest.php</span>
+
+<span class="token keyword">use</span> <span class="token package">PHPUnit<span class="token punctuation">\</span>Framework<span class="token punctuation">\</span>TestCase</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SampleTest</span> <span class="token keyword">extends</span> <span class="token class-name">TestCase</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">testHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>執行</p>
+<pre><code>$ ./vendor/bin/phpunit
+</code></pre><p><img src="https://i.imgur.com/Zrg2TAQ.png" alt=""></p>
+<p>太棒了我們完成了第一個測試。</p>
 
             </div>
             <hr>
@@ -473,7 +477,7 @@ $ sudo apt-get insta">
                     <span class="reprint-tip">Reprint please specify: </span>
                     <a href="http://yoursite.com" class="b-link-green">Yang's code blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/16/2019-03-16-Linux-SSH/" class="b-link-green">利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統</a>
+                    <a href="/2019/03/24/2019-03-24-PHP-Unit-Test/" class="b-link-green">使用 PHP Unit 進行測試</a>
                 </p>
             </div>
         </div>
@@ -493,7 +497,7 @@ $ sudo apt-get insta">
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">Previous</div>
+            <div class="article-badge left-badge text-color">Current</div>
             <div class="card">
                 <a href="/2019/03/24/2019-03-24-PHP-Unit-Test/">
                     <div class="card-image">
@@ -508,9 +512,9 @@ $ sudo apt-get insta">
 建立 app 目錄夾與測試目錄夾application                // 主要目錄  
 ├── app              </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -523,6 +527,7 @@ $ sudo apt-get insta">
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -543,25 +548,24 @@ $ sudo apt-get insta">
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">Next</div>
             <div class="card">
-                <a href="/2019/03/01/2019-03-01-Vim-Basic/">
+                <a href="/2019/03/16/2019-03-16-Linux-SSH/">
                     <div class="card-image">
                         
-                        <img src="https://i.imgur.com/XFFkDAP.png" class="responsive-img" alt="Vim 編輯器入門">
+                        <img src="https://i.imgur.com/zYCtMLO.png" class="responsive-img" alt="利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統">
                         
-                        <span class="card-title">Vim 編輯器入門</span>
+                        <span class="card-title">利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Vim 的設定檔家目錄底下 $ vim .vimrc
-所有 Vim 相關的設定都會在此更改
+                    <div class="summary">前言工作也差不多 4 個多月了，發現 Linux 很重要，這邊就紀錄一下最近學習 Linux 基礎的筆記。
+步驟版本：ubnutn 18.4 / Mac OS 10.14.3
 
-set nu : 顯示行號
-set cursorcolumn : 列光標
-set cursorline : 行光標
-set ruler : 會在狀</div>
+下載 ssh 套件
+
+$ sudo apt-get insta</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-16
                             </span>
                         <span class="publish-author">
                             
@@ -580,10 +584,6 @@ set ruler : 會在狀</div>
                     
                     <a href="/tags/Linux/" target="_blank">
                         <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/Vim/" target="_blank">
-                        <span class="chip bg-color">Vim</span>
                     </a>
                     
                 </div>
