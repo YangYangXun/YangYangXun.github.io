@@ -1,795 +1,1387 @@
-<!DOCTYPE HTML>
-<html lang="">
-<head>
-    
-
+<html>
+<!-- Head tag -->
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Yang&#39;s code blog">
-    <meta name="description" content="Yang&#39;s code blog">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Yang&#39;s code blog</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	
+		<link href="/favicon.ico" rel="icon">
+	 
+      <title>Yang&#39;s code blog</title>
+	<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/highlight.css">
+	
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?542b4962c3c4035fce9071b7c665f0d2";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
 
-    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-97838175-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d3d630390ef40ae"></script>
+
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-
-</head>
-
 <body>
-
-<header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="container">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <a href="/" class="waves-effect waves-light">
-                        
-                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
-                        
-                        <span class="logo-span">Yang's code blog</span>
-                    </a>
-                </div>
-                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
-<ul class="right">
-    
-    <li class="hide-on-med-and-down">
-        <a href="/" class="waves-effect waves-light">
-            
-            <i class="fa fa-home"></i>
-            
-            <span>Index</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/tags" class="waves-effect waves-light">
-            
-            <i class="fa fa-tags"></i>
-            
-            <span>Tags</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/categories" class="waves-effect waves-light">
-            
-            <i class="fa fa-bookmark"></i>
-            
-            <span>Categories</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/archives" class="waves-effect waves-light">
-            
-            <i class="fa fa-archive"></i>
-            
-            <span>Archives</span>
-        </a>
-    </li>
-    
-    <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
-            
-            <i class="fa fa-user-circle-o"></i>
-            
-            <span>About</span>
-        </a>
-    </li>
-    
-    <li>
-        <a id="toggleSearch" class="waves-effect waves-light">
-            <i id="searchIcon" class="mdi-action-search"></i>
-        </a>
-    </li>
-
-</ul>
-
-<div class="side-nav" id="mobile-nav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">Yang's code blog</div>
-        <div class="logo-desc">
-            
-            Do one thing, and do it well.
-            
-        </div>
-    </div>
-
-    <ul class="menu-list mobile-menu-list">
-        
-        <li>
-            <a href="/" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-home"></i>
-                
-                Index
-            </a>
-        </li>
-        
-        <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-tags"></i>
-                
-                Tags
-            </a>
-        </li>
-        
-        <li>
-            <a href="/categories" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-bookmark"></i>
-                
-                Categories
-            </a>
-        </li>
-        
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-archive"></i>
-                
-                Archives
-            </a>
-        </li>
-        
-        <li>
-            <a href="/about" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-user-circle-o"></i>
-                
-                About
-            </a>
-        </li>
-        
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
-                <i class="fa fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
-    </ul>
-
-    <div class="social-link"><a href="https://github.com/YangYangXun" class="tooltipped" target="_blank" data-tooltip="Go To My GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<!-- <a href="asdf1995905@gmail.com" class="tooltipped" target="_blank" data-tooltip="My Gmail" data-position="top"
-    data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a> -->
-<!-- <a href="#!" class="tooltipped" data-tooltip="QQ??�系???: 1181062873" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a> -->
-</div>
-</div>
-
-            </div>
-        </div>
-
-        
-        <style>
-    .nav-transparent .github-corner {
-        display: none !important;
-    }
-
-    .github-corner {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        right: 0;
-        border: 0;
-        transform: scale(1.1);
-    }
-
-    .github-corner svg {
-        color: #0f9d58;
-        fill: #fff;
-        height: 64px;
-        width: 64px;
-    }
-
-    .github-corner:hover .octo-arm {
-        animation: a 0.56s ease-in-out;
-    }
-
-    .github-corner .octo-arm {
-        animation: none;
-    }
-
-    @keyframes a {
-        0%,
-        to {
-            transform: rotate(0);
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-            transform: rotate(10deg);
-        }
-    }
-</style>
-
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewbox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
-    </svg>
-</a>
-        
-    </nav>
+	<div id="site" class="site">
+		<div id="sidebar" class="sidebar">
+			<header id="header" class="site-header">
+	<div class="site-branding">
+		<h1 class="site-title">
+			
+				<a href="/images/avatar-small.png" class="avatar-circle"><img src="/images/avatar-small.png"></a>
+			
+			<a href="/" rel="home">Yang&#39;s Blog</a></h1>
+		<p class="site-description">Happy Coding, Happy Life!</p>
+		<button class="secondary-toggle font-asesome-icon">Menu and widgets</button>
+	</div>
 </header>
+<div id="secondary" class="secondary">
+	<nav class="main-navigation">
+                         <ul id="menu-demo-menu" class="nav-menu">
+						 
+							<li class="menu-item"><a href="/">Home</a></li>
+						
+							<li class="menu-item"><a href="/archives">Archives</a></li>
+						
+							<li class="menu-item"><a href="/about">AboutMe</a></li>
+						
+                         </ul>
+    </nav>
+	
+		
+<aside class="widget">
+		<h3 class="widget-title">Archives</h3>		
+		<ul>
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">5</span></li></ul>
+		</ul>
+	</aside>
 
-<style type="text/css">
-    /* don't remove. */
-    .index-cover {
-        height: 100vh;
+
+	
+		<aside class="widget">
+    <input id="local-search-input" type="search" class="search-field" placeholder="Search …" value="" name="s">
+    <div id="local-search-result" class="search-result">
+    </div>
+</aside>
+	
+		
+<aside class="widget">
+		<h3 class="widget-title">Recent Posts</h3>		
+		<ul>
+			
+          <li>
+            <a href="/2019/03/24/2019-03-24-PHP-Unit-Test/">使用 PHP Unit 進行測試</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/16/2019-03-16-Linux-SSH/">利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/01/2019-03-01-Vim-Basic/">Vim 編輯器入門</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/13/2019-01-13-JavaScript_1/">JavaScript 學習歷程 - 1.變數與型別</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/12/2018-12-12-Vargant/">Vargnat 入門與簡介</a>
+          </li>
+        
+		</ul>
+	</aside>
+
+
+	
+		
+  <aside class="widget">
+		<h3 class="widget-title">Tag Cloud</h3>
+        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Laravel/" style="font-size: 20px;">Laravel</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Session/" style="font-size: 10px;">Session</a> <a href="/tags/SourceTree/" style="font-size: 10px;">SourceTree</a> <a href="/tags/UnitTest/" style="font-size: 10px;">UnitTest</a> <a href="/tags/Vargant/" style="font-size: 10px;">Vargant</a> <a href="/tags/Vim/" style="font-size: 10px;">Vim</a> <a href="/tags/test/" style="font-size: 10px;">test</a>
+    </aside>
+
+	
+</div>
+
+		</div>
+		<div id="content" class="site-content">
+			<main id="main" class="site-main" role="main">
+				
+  
+    
+<article class="hentry ">
+		
+		
+			<header class="entry-header">
+				<h2 class="entry-title"><a class="post-title-link" href="/2019/03/24/2019-03-24-PHP-Unit-Test/" rel="bookmark">使用 PHP Unit 進行測試</a></h2>	
+			</header>
+		
+		<!-- .entry-header -->
+		<div class="entry-content">
+			
+				<h2 id="安裝-PHP-Unit"><a href="#安裝-PHP-Unit" class="headerlink" title="安裝 PHP Unit"></a>安裝 PHP Unit</h2><pre><code>$ composer require phpunit/phpunit
+</code></pre><h2 id="建立-app-目錄夾與測試目錄夾"><a href="#建立-app-目錄夾與測試目錄夾" class="headerlink" title="建立 app 目錄夾與測試目錄夾"></a>建立 app 目錄夾與測試目錄夾</h2><pre><code>application                // 主要目錄  
+├── app                  // 你存放 PHP 專案的資料夾
+│    ├── demo.php       // 你的 PHP 程式
+│    ├── demo2.php
+│    └── demo3.php
+├── tests                // 存放測試單元的資料夾
+└── phpunit.xml         // 用來設置 PHPUnit 的檔案
+
+</code></pre><h2 id="配置-psr-4"><a href="#配置-psr-4" class="headerlink" title="配置 psr-4"></a>配置 psr-4</h2><p>composer.json 檔設定，加入 autoload</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"require"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"phpunit/phpunit"</span><span class="token operator">:</span> <span class="token string">"^7.5"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"autoload"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"psr-4"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">"App\\"</span><span class="token operator">:</span> <span class="token string">"app"</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>執行</p>
+<pre><code>$ composer dump-autoload -o
+</code></pre><h2 id="配置-phpunit-xml"><a href="#配置-phpunit-xml" class="headerlink" title="配置 phpunit.xml"></a>配置 phpunit.xml</h2><p>新增 phpunit.xml</p>
+<pre class="line-numbers language-xml"><code class="language-xml">
+<span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>phpunit</span> <span class="token attr-name">bootstrap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vendor/autoload.php<span class="token punctuation">"</span></span>
+         <span class="token attr-name">colors</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
+         <span class="token attr-name">verbose</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
+         <span class="token attr-name">stopOnFailure</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>testsuites</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>testsuite</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Test suite<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>directory</span><span class="token punctuation">></span></span>tests<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>directory</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>testsuite</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>testsuites</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>phpunit</span><span class="token punctuation">></span></span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>配置完後執行</p>
+<pre><code>$ ./vendor/bin/phpunit
+</code></pre><p>可看見下方結果</p>
+<p><img src="https://i.imgur.com/oJ6q7o4.png" alt=""></p>
+<h2 id="建立第一個測試類別"><a href="#建立第一個測試類別" class="headerlink" title="建立第一個測試類別"></a>建立第一個測試類別</h2><pre class="line-numbers language-php"><code class="language-php"><span class="token comment" spellcheck="true">// SampleTest.php</span>
+
+<span class="token keyword">use</span> <span class="token package">PHPUnit<span class="token punctuation">\</span>Framework<span class="token punctuation">\</span>TestCase</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SampleTest</span> <span class="token keyword">extends</span> <span class="token class-name">TestCase</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">testHello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token string">'hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>執行</p>
+<pre><code>$ ./vendor/bin/phpunit
+</code></pre><p><img src="https://i.imgur.com/Zrg2TAQ.png" alt=""></p>
+<p>太棒了我們完成了第一個測試。</p>
+
+
+				
+				
+			
+		</div><!-- .entry-content -->
+		
+		<footer class="entry-footer">
+			<span class="posted-on font-asesome-icon">
+	<a href="" rel="bookmark">
+	<time class="updated" datetime="2019-03-23T16:00:00.000Z">2019-03-24</time>
+	</a>
+</span>
+
+	<span class="cat-links font-asesome-icon">
+		
+				<a href="/categories/PHP/" rel="category tag">PHP</a>
+		
+	</span>
+
+
+	<span class="tags-links font-asesome-icon">
+	
+		<a href="/tags/PHP/" rel="category tag">PHP</a>
+    
+		<a href="/tags/UnitTest/" rel="category tag">UnitTest</a>
+    
+</span>
+		
+
+    <span class="eye font-asesome-icon">
+         <span id="/2019/03/24/2019-03-24-PHP-Unit-Test/" class="leancloud_visitors" data-flag-title="使用 PHP Unit 進行測試">
+        
+        </span>
+    </span>
+
+		</footer><!-- .entry-footer -->
+</article>
+<div class="misc">
+    <a href="#main"><span class="top font-asesome-icon">Top</span></a>
+</div>
+  
+    
+<article class="hentry ">
+		
+		
+			<header class="entry-header">
+				<h2 class="entry-title"><a class="post-title-link" href="/2019/03/16/2019-03-16-Linux-SSH/" rel="bookmark">利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統</a></h2>	
+			</header>
+		
+		<!-- .entry-header -->
+		<div class="entry-content">
+			
+				<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>工作也差不多 4 個多月了，發現 Linux 很重要，這邊就紀錄一下最近學習 Linux 基礎的筆記。</p>
+<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><p><strong>版本：ubnutn 18.4 / Mac OS 10.14.3</strong></p>
+<ol>
+<li><p>下載 ssh 套件</p>
+<blockquote>
+<p>$ sudo apt-get install ssh</p>
+</blockquote>
+</li>
+<li><p>查詢指令是否成功安裝 (按兩下 Tab)</p>
+<blockquote>
+<p>$ ss</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/0pfHOiU.png" alt=""></p>
+<ol start="3">
+<li>查詢 ssh 是否運作<blockquote>
+<p>$ sudo systemctl status ssh</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/DLI6Lhw.png" alt=""></p>
+<ol start="4">
+<li>查詢 ip<blockquote>
+<p>$ ip address</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/peIMrBk.png" alt=""></p>
+<ol start="5">
+<li>測試連入自己的 ssh<blockquote>
+<p>$ ssh <a href="mailto:username@10.0.2.15" target="_blank" rel="noopener">username@10.0.2.15</a> </p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/H5TRYXq.png" alt=""></p>
+<ol start="6">
+<li>嘗試從 Mac 連入 ubnutn<blockquote>
+<p>$ ssh <a href="mailto:username@10.0.2.15" target="_blank" rel="noopener">username@10.0.2.15</a> </p>
+</blockquote>
+</li>
+</ol>
+<p>失敗，VM 屬於屬於內部網路，如果用此 ssh 方式連接會以外部網路做搜尋連線，所以是沒辦法連上的。</p>
+<ol start="7">
+<li>解決，VM 設定 ssh 連結導向</li>
+</ol>
+<p><strong>VM 操作 ： 設定值 -&gt; 網路 -&gt; 進階 -&gt; 連接阜轉送</strong></p>
+<p>設定 port 號映射，Mac 去看 8001 時會導到 ubnutn port 號</p>
+<p><img src="https://i.imgur.com/ZB4IO0J.png" alt=""></p>
+<ol start="8">
+<li>再次嘗試從 Mac 連入 ubnutn<blockquote>
+<p>$ ssh <a href="mailto:username@127.0.0.1" target="_blank" rel="noopener">username@127.0.0.1</a> -p 8001</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/c2Gd3nh.png" alt=""></p>
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><p>Q : 能否由 Mac 連進多台虛擬機器？<br>A : 可以，只要設定多個不同的 port 號映射即可。</p>
+
+
+				
+				
+			
+		</div><!-- .entry-content -->
+		
+		<footer class="entry-footer">
+			<span class="posted-on font-asesome-icon">
+	<a href="" rel="bookmark">
+	<time class="updated" datetime="2019-03-15T16:00:00.000Z">2019-03-16</time>
+	</a>
+</span>
+
+	<span class="cat-links font-asesome-icon">
+		
+				<a href="/categories/Linux/" rel="category tag">Linux</a>
+		
+	</span>
+
+
+	<span class="tags-links font-asesome-icon">
+	
+		<a href="/tags/Linux/" rel="category tag">Linux</a>
+    
+</span>
+		
+
+    <span class="eye font-asesome-icon">
+         <span id="/2019/03/16/2019-03-16-Linux-SSH/" class="leancloud_visitors" data-flag-title="利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統">
+        
+        </span>
+    </span>
+
+		</footer><!-- .entry-footer -->
+</article>
+<div class="misc">
+    <a href="#main"><span class="top font-asesome-icon">Top</span></a>
+</div>
+  
+    
+<article class="hentry ">
+		
+		
+			<header class="entry-header">
+				<h2 class="entry-title"><a class="post-title-link" href="/2019/03/01/2019-03-01-Vim-Basic/" rel="bookmark">Vim 編輯器入門</a></h2>	
+			</header>
+		
+		<!-- .entry-header -->
+		<div class="entry-content">
+			
+				<h2 id="Vim-的設定檔"><a href="#Vim-的設定檔" class="headerlink" title="Vim 的設定檔"></a>Vim 的設定檔</h2><pre><code>家目錄底下 $ vim .vimrc
+</code></pre><p>所有 Vim 相關的設定都會在此更改</p>
+<ul>
+<li><code>set nu</code> : 顯示行號</li>
+<li><code>set cursorcolumn</code> : 列光標</li>
+<li><code>set cursorline</code> : 行光標</li>
+<li><code>set ruler</code> : 會在狀態列顯示游標所在處之行列狀態，預設不打開，但建議打開</li>
+</ul>
+<h2 id="Vim-模式與操作"><a href="#Vim-模式與操作" class="headerlink" title="Vim 模式與操作"></a>Vim 模式與操作</h2><h3 id="Normal-模式"><a href="#Normal-模式" class="headerlink" title="Normal 模式"></a>Normal 模式</h3><ul>
+<li><code>大寫 V</code> : 鍵入大寫 V 是游標經過一行就<strong>選擇一行</strong></li>
+<li><code>小寫 v</code> : 小寫 v 則是游標經過的位置就選擇起來</li>
+<li><code>小寫 y</code> : 按下小寫 y 可以<strong>複製</strong>起選擇的文字</li>
+<li><code>小寫 d</code> : 按下 d 可以<strong>刪除</strong>掉選取的文字</li>
+<li><code>小寫 p</code> : 要貼上文字的地方，按下 p 就可以<strong>貼上</strong>剛才複製好的文字</li>
+<li><code>小寫 u</code> : 要復原剛才的動作，可以鍵入 u</li>
+<li><code>/</code> : 要搜尋字串，可以在一般模式下輸入”/“，並在斜線後方鍵入要搜尋的字串，並按下 Enter。當找到一個符合的字串後，若要繼續往下搜尋，可以鍵入小寫 n。</li>
+<li><code>gg</code> : 移到整份文件的最上方</li>
+<li><code>G</code> : 移到整份文件的最下方</li>
+<li><code>小寫 u</code> : 要復原剛才的動作，可以鍵入 u</li>
+</ul>
+<h3 id="Insert-模式"><a href="#Insert-模式" class="headerlink" title="Insert 模式"></a>Insert 模式</h3><ul>
+<li><code>:wq</code> : 存檔後離開</li>
+<li><code>:w</code> : 存檔</li>
+<li><code>:q</code> : 離開</li>
+<li><code>:qa!</code> : 強制離開</li>
+</ul>
+<h3 id="組合"><a href="#組合" class="headerlink" title="組合"></a>組合</h3><p><strong>上下移動當前行</strong></p>
+<blockquote>
+<p>ddkP</p>
+</blockquote>
+<ul>
+<li>dd 將刪除該行並將它的添加到默認寄存器</li>
+<li>k 將上移一行( j 將沿著一條線移動)</li>
+<li>P 將粘貼到當前行的上方</li>
+</ul>
+<blockquote>
+<p>:m +1 - 下移 1行<br>:m -2 - 上移 1行</p>
+</blockquote>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://kaochenlong.com/2011/12/28/vim-tips/" target="_blank" rel="noopener">高見龍：Vim的操作小技巧</a><br><a href="https://ithelp.ithome.com.tw/articles/10194528" target="_blank" rel="noopener">第 18 天：安裝/設定 Vim 編輯器</a></p>
+
+
+				
+				
+			
+		</div><!-- .entry-content -->
+		
+		<footer class="entry-footer">
+			<span class="posted-on font-asesome-icon">
+	<a href="" rel="bookmark">
+	<time class="updated" datetime="2019-02-28T16:00:00.000Z">2019-03-01</time>
+	</a>
+</span>
+
+	<span class="cat-links font-asesome-icon">
+		
+				<a href="/categories/Linux/" rel="category tag">Linux</a>
+		
+	</span>
+
+
+	<span class="tags-links font-asesome-icon">
+	
+		<a href="/tags/Linux/" rel="category tag">Linux</a>
+    
+		<a href="/tags/Vim/" rel="category tag">Vim</a>
+    
+</span>
+		
+
+    <span class="eye font-asesome-icon">
+         <span id="/2019/03/01/2019-03-01-Vim-Basic/" class="leancloud_visitors" data-flag-title="Vim 編輯器入門">
+        
+        </span>
+    </span>
+
+		</footer><!-- .entry-footer -->
+</article>
+<div class="misc">
+    <a href="#main"><span class="top font-asesome-icon">Top</span></a>
+</div>
+  
+    
+<article class="hentry ">
+		
+		
+			<header class="entry-header">
+				<h2 class="entry-title"><a class="post-title-link" href="/2019/01/13/2019-01-13-JavaScript_1/" rel="bookmark">JavaScript 學習歷程 - 1.變數與型別</a></h2>	
+			</header>
+		
+		<!-- .entry-header -->
+		<div class="entry-content">
+			
+				<h2 id="變數-Variable"><a href="#變數-Variable" class="headerlink" title="變數 (Variable)"></a>變數 (Variable)</h2><p>從大學時期到現在學過不少語言，變數是入門各種語言會在一開始碰到的。什麼是變數呢？<br>變數幫助我們在 coding 解問題的過程中儲存重要資訊，主要分兩種：</p>
+<ul>
+<li>全域變數 (Global Variable) ： 所有範圍皆能存取</li>
+<li>區域變數 (Local Variable) ： 只有在特定範圍內有效</li>
+</ul>
+<h3 id="以-var-宣告變數"><a href="#以-var-宣告變數" class="headerlink" title="以 var 宣告變數"></a>以 var 宣告變數</h3><p>注意如果使用 var 宣告變數則只有在 function 中的宣告才會視為區域變數，<br>其餘如 if-else statement 及 for loop 等宣告皆會是為全域變數</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">
+<span class="token keyword">var</span> isProgrammer <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 全域</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>isProgrammer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> var_in_if <span class="token operator">=</span> <span class="token string">'say hello in if'</span> <span class="token comment" spellcheck="true">// 全域</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in if statement -> '</span> <span class="token operator">+</span> var_in_for<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// say hello in if</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> var_in_for <span class="token operator">=</span> <span class="token string">'say hello in for loop'</span> <span class="token comment" spellcheck="true">// 全域</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in for loop -> '</span> <span class="token operator">+</span> var_in_for<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// say hello in for loop</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> var_in_function <span class="token operator">=</span> <span class="token string">'var which delcare in function '</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in function  -> '</span> <span class="token operator">+</span> var_in_function<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in global area => '</span> <span class="token operator">+</span> var_in_if<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// say hello in if</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in global area => '</span> <span class="token operator">+</span> var_in_for<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// say hello in for </span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Print in global area => '</span> <span class="token operator">+</span> var_in_function<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// ReferenceError: var_in_function is not defined</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="ES6-新增-let-以及-const"><a href="#ES6-新增-let-以及-const" class="headerlink" title="ES6 新增 let 以及 const"></a>ES6 新增 let 以及 const</h3><ul>
+<li>let 區域分明，只要在 <code>{}</code> 中宣告的變數都是區域變數，可以免污染全域變數。</li>
+<li>const 是常數必須在宣告時給定初值，不能重新定值以及重新宣告。</li>
+</ul>
+<pre class="line-numbers language-javascript"><code class="language-javascript">
+<span class="token comment" spellcheck="true">// let 很適合用來當 for 迴圈變數使用</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> element <span class="token operator">=</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// const 必須在宣告時給予初值</span>
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token string">'a'</span>
+a <span class="token operator">=</span> <span class="token number">3</span> <span class="token comment" spellcheck="true">// TypeError: Assignment to constant variable.</span>
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token string">'a2'</span> <span class="token comment" spellcheck="true">// SyntaxError: Identifier 'a' has already been declared</span>
+<span class="token keyword">const</span> b <span class="token comment" spellcheck="true">// SyntaxError: Missing initializer in const declaration</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="型別-Type"><a href="#型別-Type" class="headerlink" title="型別 (Type)"></a>型別 (Type)</h2><p>JavaScript 弱型別語言，他對型別要求沒有這麼嚴謹，可以在過程中一再的做型別轉換。</p>
+<blockquote>
+<p><em>小觀念</em>：變數其實沒有型別，因為可能在過程中不斷轉換。<strong>值</strong>才有型別。</p>
+</blockquote>
+<ol>
+<li>Number</li>
+<li>String</li>
+<li>Boolean<br><del>4. Array</del></li>
+<li><strong>Object</strong></li>
+<li><strong>Null</strong></li>
+<li><strong>Undefined</strong></li>
+<li>Symbol (ES6)</li>
+</ol>
+<h3 id="使用-typeof-檢視型別"><a href="#使用-typeof-檢視型別" class="headerlink" title="使用 typeof 檢視型別"></a>使用 typeof 檢視型別</h3><pre class="line-numbers language-javascript"><code class="language-javascript">
+<span class="token comment" spellcheck="true">// 一些 typeof 範例</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token number">1234</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// number</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token number">12.34</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// number</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token number">0.1234</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// number</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token string">"1234"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// string</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token string">'1234'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// string</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// boolean</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// boolean</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// object</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// object</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// object ( JavaScript Bug )</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> undefined<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// undefined</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="null-與-undefined"><a href="#null-與-undefined" class="headerlink" title="null 與 undefined"></a>null 與 undefined</h3><ul>
+<li>null : 空值，變數其實有被指定一個值，只不過是空值</li>
+<li>undefined : 未定義，變數沒有被指定一個值</li>
+</ul>
+<p><strong>變數應避免設定為 undefined 而是 null，因為 undefine 常造成程式出錯</strong></p>
+<p><em>Q&amp;A：如何判斷是否為 null ?</em></p>
+<p>方法1 : 利用 falsy value</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>JavaScript falsy value 有</strong></p>
+<ul>
+<li>NaN</li>
+<li>0, -0</li>
+<li>“ “ 空字串</li>
+<li>undefined</li>
+<li>null</li>
+<li>false</li>
+</ul>
+<p>方法2 : 精確判斷可搭配 typeof </p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>！value <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 我是 null</span>
+<span class="token punctuation">}</span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>我覺得 JavaScript 的執行結果有許多出乎意料之處，唯有仔細了解背後原理才不會<br>落入深坑，進入痛苦的隕石開發。</p>
+
+
+				
+				
+			
+		</div><!-- .entry-content -->
+		
+		<footer class="entry-footer">
+			<span class="posted-on font-asesome-icon">
+	<a href="" rel="bookmark">
+	<time class="updated" datetime="2019-01-12T16:00:00.000Z">2019-01-13</time>
+	</a>
+</span>
+
+	<span class="cat-links font-asesome-icon">
+		
+				<a href="/categories/Front-End/" rel="category tag">Front End</a>
+		
+	</span>
+
+
+	<span class="tags-links font-asesome-icon">
+	
+		<a href="/tags/JavaScript/" rel="category tag">JavaScript</a>
+    
+</span>
+		
+
+    <span class="eye font-asesome-icon">
+         <span id="/2019/01/13/2019-01-13-JavaScript_1/" class="leancloud_visitors" data-flag-title="JavaScript 學習歷程 - 1.變數與型別">
+        
+        </span>
+    </span>
+
+		</footer><!-- .entry-footer -->
+</article>
+<div class="misc">
+    <a href="#main"><span class="top font-asesome-icon">Top</span></a>
+</div>
+  
+    
+<article class="hentry ">
+		
+		
+			<header class="entry-header">
+				<h2 class="entry-title"><a class="post-title-link" href="/2018/12/12/2018-12-12-Vargant/" rel="bookmark">Vargnat 入門與簡介</a></h2>	
+			</header>
+		
+		<!-- .entry-header -->
+		<div class="entry-content">
+			
+				<h1 id="Vagrant-入門與簡介"><a href="#Vagrant-入門與簡介" class="headerlink" title="Vagrant 入門與簡介"></a>Vagrant 入門與簡介</h1><h2 id="Vagrant-是什麼？"><a href="#Vagrant-是什麼？" class="headerlink" title="Vagrant 是什麼？"></a>Vagrant 是什麼？</h2><blockquote>
+<p>用來建構跨平台虛擬開發環境的工具，並且提供可配置、可再生、可攜性佳的環境。</p>
+</blockquote>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Developmant_Tools%2Fvargnat-1.png?alt=media&amp;token=558bb8b8-b991-4e72-92c2-d57557da80e9" alt=""></p>
+<p>在部署軟體服務的階段，開發人員常常會利用虛擬主機來模擬及配置開發環境。Vagrant 就是基於這樣的需求產生的一個服務。與傳統使用 VirtualBox 透過圖形使用者介面 (Graphical User Interface, GUI) 操作虛擬主機有一點不同的是，Vagrant 主要是使用命令列介面 (command-line interface, CLI) 來與虛擬主機做溝通。因此，我們在接下來的章節中將會運用大量的命令列來進行操作。</p>
+<p>Vagrant 的主要作用是提供一個可配置、可移植和復用的軟件環境。Vagrant 讓你通過編寫一個Vagrantfile 文件來控制虛擬機的啟動、虛擬機網絡環境的配置、虛擬機與主機間的文件共享，以及啟動後自動執行一些配置腳本，如自動執行一個Shell Script 來安裝一些必備的開發工具，如安裝配置MySQL、PHP，甚至是自動配置Nginx 站點。這意味著，在一個多人開發的項目中，你只需要同步Vagrantfile 文件，就可以保證參與項目的每個人各自的機器上擁有一致的開發環境。</p>
+<h2 id="Vagrant-解決了甚麼問題？"><a href="#Vagrant-解決了甚麼問題？" class="headerlink" title="Vagrant 解決了甚麼問題？"></a>Vagrant 解決了甚麼問題？</h2><blockquote>
+<p>讓 “在我的電腦上明明能跑” 這種說詞成為歷史。</p>
+</blockquote>
+<h2 id="Vagrant-原理"><a href="#Vagrant-原理" class="headerlink" title="Vagrant 原理"></a>Vagrant 原理</h2><p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Developmant_Tools%2Fvargant-2.png?alt=media&amp;token=5332ae1c-1159-45e5-a01a-6e0850b50f41" alt=""></p>
+<p>我們可以通過 Vagrant 封裝一個 Linux 的開發環境分發給團隊成員。成員可以在自己喜歡的桌面系統（Mac/Windows/Linux）上開發程序，代碼卻能統一在封裝好的環境裡運行，非常威猛。</p>
+<h2 id="Vagrant-優勢"><a href="#Vagrant-優勢" class="headerlink" title="Vagrant 優勢"></a>Vagrant 優勢</h2><ol>
+<li>容易創建 vagrant up</li>
+<li>方便打包分發 vargrant package</li>
+<li>有 vagrantFile 管理開發環境</li>
+</ol>
+<h2 id="Vagrant-常用命令列"><a href="#Vagrant-常用命令列" class="headerlink" title="Vagrant 常用命令列"></a>Vagrant 常用命令列</h2><ol>
+<li><p>Vagrant 版本</p>
+<p> <code>$ vagrant version</code></p>
+</li>
+<li><p>初始化 Vagrant box</p>
+<p> <code>$ vagrant init hashicorp/precise64</code></p>
+<ul>
+<li>初始化 Vagrantfile</li>
+</ul>
+</li>
+<li><p>啟動虛擬機</p>
+<p> <code>$ vagrant up</code></p>
+</li>
+<li><p>透過 SSH 登入虛擬機</p>
+<p> <code>$ vagrant ssh</code></p>
+</li>
+<li><p>加入 Vagrant boxes</p>
+<p> <code>$ vagrant box add &lt;box_name&gt; &lt;box_url&gt;</code></p>
+</li>
+<li><p>檢查一下目前所有安裝在本機的 Vagrant boxes</p>
+<p> <code>$ vagrant box list</code></p>
+</li>
+<li><p>關機</p>
+<p> <code>$ vagrant halt</code></p>
+</li>
+<li><p>如果掛載的設定有改動請使用</p>
+<p> <code>$ vagrant reload --provision</code></p>
+</li>
+<li><p>查看虛擬機運行狀態</p>
+<p> <code>$ vagrant status</code></p>
+</li>
+</ol>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>這次會學習 Vargant 主要是因為 Laravel 的 Homestead 環境配置需要用到，未來有機會會再來補充更多。</p>
+
+
+				
+				
+			
+		</div><!-- .entry-content -->
+		
+		<footer class="entry-footer">
+			<span class="posted-on font-asesome-icon">
+	<a href="" rel="bookmark">
+	<time class="updated" datetime="2018-12-11T16:00:00.000Z">2018-12-12</time>
+	</a>
+</span>
+
+	<span class="cat-links font-asesome-icon">
+		
+				<a href="/categories/Development-Tools/" rel="category tag">Development Tools</a>
+		
+	</span>
+
+
+	<span class="tags-links font-asesome-icon">
+	
+		<a href="/tags/Vargant/" rel="category tag">Vargant</a>
+    
+</span>
+		
+
+    <span class="eye font-asesome-icon">
+         <span id="/2018/12/12/2018-12-12-Vargant/" class="leancloud_visitors" data-flag-title="Vargnat 入門與簡介">
+        
+        </span>
+    </span>
+
+		</footer><!-- .entry-footer -->
+</article>
+<div class="misc">
+    <a href="#main"><span class="top font-asesome-icon">Top</span></a>
+</div>
+  
+    
+<article class="hentry ">
+		
+		
+			<header class="entry-header">
+				<h2 class="entry-title"><a class="post-title-link" href="/2018/12/08/2018-12-4-Gitflow-SourceTree/" rel="bookmark">入門 SourceTree</a></h2>	
+			</header>
+		
+		<!-- .entry-header -->
+		<div class="entry-content">
+			
+				<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近剛到職上班，公司用 SourceTree 當作 Git 圖形化工具，這邊記錄一些入門技巧。</p>
+<h2 id="實作步驟"><a href="#實作步驟" class="headerlink" title="實作步驟"></a>實作步驟</h2><ol>
+<li>初始環境為 Clone 下 Github 的遠端 Repo 。我的專案內只有 index.html 檔，並且有一次提交紀錄，此時 History 畫面如下。<br>可以看到目前的 Graph 有三個 Mark ，解釋如下方。 </li>
+</ol>
+<ul>
+<li><code>master</code> : 主分支</li>
+<li><code>origin/master</code> : 我們用 (遠端倉庫名)/(分支名) 這樣的形式表示遠端分支。Git 會自動為你將 Clone 位址的遠端倉庫命名為 origin，<br> 並下載其中所有的資料，建立一個指向它的 master 分支的指標。</li>
+<li><code>origin/HEAD</code> : 用來指向目前分支的最新版本，也就是指向origin/master。</li>
+<li><p>origin 其實就是遠端儲存庫的別名，你可以輸入 <code>git remote -v</code> 就可以看到遠端儲存庫的路徑。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep1.png?alt=media&amp;token=6f13c184-6c0f-4ffa-b1b4-5ab2c27ed145" alt=""></p>
+</li>
+</ul>
+<ol start="2">
+<li><p>接著就來建立我們 GitFlow 大地圖的第一步，創建一個 develop 分支。上方欄 Branch 按下去，填入 Branch 名稱即可。<br><strong>細部觀察</strong>可以發現創建分支後 SourceTree 會自動幫我們跳到分支上。<br>此動作相當於<strong>指令方式</strong> <code>git branch develop</code> 建立分支。如果有勾選 <code>Checkout new branch</code> 就會在建立分支後立即跳到分之。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep2.png?alt=media&amp;token=70a4083e-f0b1-4f06-b998-59b2514e092a" alt=""></p>
+</li>
+<li><p>再加入兩支 feature 分支。分別是 feature/EditHomePage 以及 feature/AddAboutMe。<br>一樣可以發現圓點標記都停留在最後加入的分支上。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep3.png?alt=media&amp;token=0af6ed08-a6e8-4a72-b8b1-9fb04cd8fd1c" alt=""></p>
+</li>
+<li><p>回到 feature/EditHomePage 編輯 index.html 並且做一次提交。結果如下。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep4.png?alt=media&amp;token=0f2c8c4a-fc9a-4881-9232-f9ef145f173f" alt=""></p>
+</li>
+<li><p>如果成功完成 feature 分支任務了。我們就可以做 merge 到 develop 的動作，<strong>首先要先跳到 develop<br>分支</strong>，鼠標移動到要 merge 得分支上，右鍵選 merge 。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep5.png?alt=media&amp;token=cdb37280-189e-4860-8ad8-1a355a0958f3" alt=""></p>
+<p>完成後如下圖。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep5-2.png?alt=media&amp;token=27a90c63-8535-44c2-9e7b-89e6388a19cb" alt=""></p>
+</li>
+<li><p>都沒問題後可以刪除 feature 分支，因為它已經完成階段性的任務了。同時跳到 feature/AddAboutMe 新增一支 about.html 並提交。結果如          圖。<strong>指令方式</strong>刪除分支 <code>git branch -d feature/EditHomePage</code></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep6.png?alt=media&amp;token=f90560d1-a902-4dd7-91e3-38e9814a83e0" alt=""></p>
+</li>
+<li><p>一樣完成 feature 後 merge 到 develop。完成如圖。(完成就可以刪除 feature 分支)<br><strong>注意</strong>盡量不要有太多或是剩餘未 merge 的 feature 分支。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep7.png?alt=media&amp;token=096825f5-a773-4a16-90bf-8b55481032d0" alt=""></p>
+</li>
+</ol>
+<ol start="8">
+<li><p>接下來我們要來搞一點破壞了，模擬一下開發中如果 commit 上錯誤的版本要如何撤回。<br>這邊示範如果提交兩次錯誤 commit 在未 push 到遠端 server 之前都能夠撤回。<br>直接把游標移動到想撤回的地方，右鍵 Reset develop to commit。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep8-1.png?alt=media&amp;token=79da2cc8-dec1-4e3e-ac4b-3a433647feb1" alt=""></p>
+<p>點擊之後會有三個選項可以選擇。這裡選 Hard</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%2F2018-12-3-Git-With-SourceTree%2Fstep8-2.png?alt=media&amp;token=edc47583-8408-4204-9c81-3f4c43354118" alt=""></p>
+</li>
+</ol>
+<ul>
+<li><code>Soft</code> : 這個模式下的 reset，工作目錄跟暫存區的檔案都不會被丟掉，所以看起來就只有 HEAD 的移動而已。也因此，Commit 拆出來的檔案會直接放在暫存區 (Stage)。</li>
+<li><code>Mixed</code> : 為預設模式。這個模式會把暫存區的檔案丟掉，但不會動到工作目錄的檔案，也就是說 Commit 拆出來的檔案會留在工作目錄，但不會留在暫存區 (Unstaged)。</li>
+<li><p><code>Hard</code> : 在這個模式下，不管是工作目錄以及暫存區的檔案都會丟掉 (砍掉重練)。</p>
+<p>撤回後圖型就回到 step7 囉！</p>
+</li>
+</ul>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>除了使用方便的圖形化介面，也期許自己能利用指令來做好版本控制，而不只是依賴圖形工具。</p>
+
+
+				
+				
+			
+		</div><!-- .entry-content -->
+		
+		<footer class="entry-footer">
+			<span class="posted-on font-asesome-icon">
+	<a href="" rel="bookmark">
+	<time class="updated" datetime="2018-12-07T16:00:00.000Z">2018-12-08</time>
+	</a>
+</span>
+
+	<span class="cat-links font-asesome-icon">
+		
+				<a href="/categories/Development-Tools/" rel="category tag">Development Tools</a>
+		
+	</span>
+
+
+	<span class="tags-links font-asesome-icon">
+	
+		<a href="/tags/Git/" rel="category tag">Git</a>
+    
+		<a href="/tags/SourceTree/" rel="category tag">SourceTree</a>
+    
+</span>
+		
+
+    <span class="eye font-asesome-icon">
+         <span id="/2018/12/08/2018-12-4-Gitflow-SourceTree/" class="leancloud_visitors" data-flag-title="入門 SourceTree">
+        
+        </span>
+    </span>
+
+		</footer><!-- .entry-footer -->
+</article>
+<div class="misc">
+    <a href="#main"><span class="top font-asesome-icon">Top</span></a>
+</div>
+  
+    
+<article class="hentry ">
+		
+		
+			<header class="entry-header">
+				<h2 class="entry-title"><a class="post-title-link" href="/2018/12/02/2018-12-2-Laravel-Session/" rel="bookmark">Laravel Session 機制</a></h2>	
+			</header>
+		
+		<!-- .entry-header -->
+		<div class="entry-content">
+			
+				<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>HTTP 是無狀態的，所以需要有一種能夠在請求之間紀錄狀態的法，透過這種紀錄的方法網站系統才能夠判別使用者目前狀態 ( 登入 登出 權限等…)，<br>因此 Session 就誕生拉。Session 提供了一個在多個請求之間儲存有關用戶訊息的方法，本次主要介紹 Laravel 的 Session 機制。<br>之後會再使用原生 PHP 來比較一下。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Session 的配置檔在 config / session.php 內<br>初始配置以 File 的方式來記錄 Session</p>
+<ul>
+<li>file- 將會話存儲在storage/framework/sessions中。</li>
+</ul>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Laravel_Framework%2F2018-12-2-Laravel-HTTP-Session%2Fcongif_session_driver.jpg?alt=media&amp;token=55150f2e-8381-4840-94b9-0dc27c173010" alt=""></p>
+<p>除了使用 File 方式來儲存 Session， Laravel 還提供以下幾種方式 :</p>
+<ul>
+<li><strong>cookie</strong> - Session 存儲在安全加密的cookie中。</li>
+<li><strong>database</strong> - 將會話存儲在數據庫中。</li>
+<li><strong>memcached</strong> / redis- Session 存儲在基於高速緩存的存儲系統中。</li>
+<li><strong>array</strong> - Sessions 存儲在 PHP 數組中，但不會被持久化。</li>
+</ul>
+<p>這篇先介紹以 Database 方式來存 Session。之後有時間再來一一嘗試其他方法。</p>
+<h2 id="以-Database-方式來存-Session"><a href="#以-Database-方式來存-Session" class="headerlink" title="以 Database 方式來存 Session"></a>以 Database 方式來存 Session</h2><h3 id="設定資料表"><a href="#設定資料表" class="headerlink" title="設定資料表"></a>設定資料表</h3><ul>
+<li>我們利用 Migrate 的方式來建立 sessions 資料表，Schema 如下 :</li>
+</ul>
+<pre class="line-numbers language-php"><code class="language-php">
+Schema<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token string">'sessions'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">string</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">unique</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">unsignedInteger</span><span class="token punctuation">(</span><span class="token string">'user_id'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">nullable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">string</span><span class="token punctuation">(</span><span class="token string">'ip_address'</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">nullable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'user_agent'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">nullable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'payload'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">integer</span><span class="token punctuation">(</span><span class="token string">'last_activity'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>使用 artisan 命令來 migrate</li>
+</ul>
+<p><code>$ php artisan session:table</code></p>
+<p><code>$ php artisan migrate</code></p>
+<ul>
+<li>完成後如下</li>
+</ul>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Laravel_Framework%2F2018-12-2-Laravel-HTTP-Session%2Fsessions_table.jpg?alt=media&amp;token=8f2e5018-7ea0-47f4-90f8-1d342f2af86a" alt=""></p>
+<p>接著下一章我們就來觀察 Session 如何記錄使用者狀態吧!</p>
+<h2 id="使用-Session"><a href="#使用-Session" class="headerlink" title="使用 Session"></a>使用 Session</h2><h3 id="Session-存入-sessions-table-的時機"><a href="#Session-存入-sessions-table-的時機" class="headerlink" title="Session 存入 sessions table 的時機"></a>Session 存入 sessions table 的時機</h3><ul>
+<li>當瀏覽器第一次訪問網站時 (分別用 IE 和 Chrome 請求)<blockquote>
+<p>  可以看到下圖產生了兩個 Session</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Laravel_Framework%2F2018-12-2-Laravel-HTTP-Session%2Fbrowser_visit_web.PNG?alt=media&amp;token=fda207a1-0081-46d5-82e9-fcec39bacf90" alt=""></p>
+<ul>
+<li>透過 Laravel Auth 機制登入時</li>
+</ul>
+<p><strong>&gt;ToDo&lt;</strong></p>
+<h3 id="獲取-Session"><a href="#獲取-Session" class="headerlink" title="獲取 Session"></a>獲取 Session</h3><ul>
+<li>如果你想要获取所有的 Session 数据，可以使用 all 方法：</li>
+</ul>
+<pre class="line-numbers language-php"><code class="language-php"> <span class="token variable">$data</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Result :<br><img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/Laravel_Framework%2F2018-12-2-Laravel-HTTP-Session%2Fsession_all.jpg?alt=media&amp;token=e71b7234-b7c7-406d-b394-e494313ab12e" alt=""></p>
+<ul>
+<li>獲取 Sessio 中部份資料</li>
+</ul>
+<pre class="line-numbers language-php"><code class="language-php">
+<span class="token comment" spellcheck="true">// 得到 Token</span>
+<span class="token variable">$token</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'_token'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 得到上一次請求的 URL</span>
+<span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'_previous'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'url'</span><span class="token punctuation">]</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>判断 Session 中是否存在某个值</li>
+</ul>
+<pre class="line-numbers language-php"><code class="language-php">
+<span class="token comment" spellcheck="true">// 存在且不為 null 可以用 has 判斷</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">has</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 存在且其值為 null 可以用 exists 判斷</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="存儲數據"><a href="#存儲數據" class="headerlink" title="存儲數據"></a>存儲數據</h3><ul>
+<li>存入鍵值對到 Session 中有 2 種方法</li>
+</ul>
+<ol>
+<li>通過請求實例</li>
+<li>通過全局函數</li>
+</ol>
+<pre class="line-numbers language-php"><code class="language-php">
+<span class="token comment" spellcheck="true">// 通過請求實例</span>
+<span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 通過全局函數</span>
+<span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'key'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>今天先簡單介紹，之後遇到相關問題會回來補充。</p>
+
+
+				
+				
+			
+		</div><!-- .entry-content -->
+		
+		<footer class="entry-footer">
+			<span class="posted-on font-asesome-icon">
+	<a href="" rel="bookmark">
+	<time class="updated" datetime="2018-12-02T03:25:00.000Z">2018-12-02</time>
+	</a>
+</span>
+
+	<span class="cat-links font-asesome-icon">
+		
+				<a href="/categories/Backed-End/" rel="category tag">Backed-End</a>
+		
+	</span>
+
+
+	<span class="tags-links font-asesome-icon">
+	
+		<a href="/tags/Laravel/" rel="category tag">Laravel</a>
+    
+		<a href="/tags/Session/" rel="category tag">Session</a>
+    
+</span>
+		
+
+    <span class="eye font-asesome-icon">
+         <span id="/2018/12/02/2018-12-2-Laravel-Session/" class="leancloud_visitors" data-flag-title="Laravel Session 機制">
+        
+        </span>
+    </span>
+
+		</footer><!-- .entry-footer -->
+</article>
+<div class="misc">
+    <a href="#main"><span class="top font-asesome-icon">Top</span></a>
+</div>
+  
+    
+<article class="hentry ">
+		
+		
+			<header class="entry-header">
+				<h2 class="entry-title"><a class="post-title-link" href="/2018/12/01/2018-12-1-Laravel-FormVarify/" rel="bookmark">Laravel 表單驗證</a></h2>	
+			</header>
+		
+		<!-- .entry-header -->
+		<div class="entry-content">
+			
+				<ul>
+<li>在laravel中，其實可以說是有兩種方式來進行表單驗證：使用 Request 和使用 Validation 。</li>
+<li>5.5 新增 make Rule 方式</li>
+</ul>
+<h2 id="Request-表單驗證"><a href="#Request-表單驗證" class="headerlink" title="Request 表單驗證"></a>Request 表單驗證</h2><ul>
+<li>使用artisan這個工具</li>
+</ul>
+<p><code>php artisan make:request TestRequest</code></p>
+<ul>
+<li>注意細節</li>
+</ul>
+<ol>
+<li>Laravel CSRF 保護，送表單需加上 @csrf </li>
+<li>表單 action 寫法<pre class="line-numbers language-php"><code class="language-php">為路由命名 <span class="token punctuation">:</span> <span class="token operator">*</span><span class="token operator">*</span> action <span class="token operator">=</span> <span class="token string">"{{ route('form.store') }}"</span> （推薦）<span class="token operator">*</span><span class="token operator">*</span>
+直接鏈結控制器 <span class="token punctuation">:</span> <span class="token operator">*</span><span class="token operator">*</span> action <span class="token operator">=</span> <span class="token string">"{{ action('Form\FormController@store')}}"</span> <span class="token operator">*</span><span class="token operator">*</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<ul>
+<li>File</li>
+</ul>
+<pre class="line-numbers language-php"><code class="language-php">
+<span class="token keyword">class</span> <span class="token class-name">TestRequest</span> <span class="token keyword">extends</span> <span class="token class-name">FormRequest</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * Determine if the user is authorized to make this request.
+     * 
+     * @return bool
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">authorize</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">/**
+        authorize()可以這樣簡單地理解：我們在處理這個表單請求(通常是一個post請求)的時候是否是需要進行身份驗證，這種驗證是指：比如A發表的評論，B能不能進行編輯。如果不能，則保留返回false，如果可以，則修改返回true。那麼我們這裡的邏輯是：既然是發表文章，在我們這個站點註冊的用戶(如果開放註冊的話)都是可以發表文章的，所以我們首先修改authorize()方法，將其返回值改為：return true;。*/</span>
+
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">rules</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>
+            <span class="token comment" spellcheck="true">//</span>
+        <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Validation-表單驗證"><a href="#Validation-表單驗證" class="headerlink" title="Validation 表單驗證"></a>Validation 表單驗證</h2><ul>
+<li>使用 ValidatesRequestsTrait 的 validate 方法</li>
+</ul>
+<pre class="line-numbers language-php"><code class="language-php">
+ v5<span class="token number">.6</span>
+
+ <span class="token variable">$validatedData</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required|unique:posts|max:255'</span><span class="token punctuation">,</span>
+    <span class="token string">'body'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required'</span><span class="token punctuation">,</span>
+ <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ v5<span class="token number">.4</span>
+
+ <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+    <span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required|unique:posts|max:255'</span><span class="token punctuation">,</span>
+    <span class="token string">'body'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required'</span><span class="token punctuation">,</span>
+    <span class="token string">'publish_at'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'nullable|date'</span><span class="token punctuation">,</span>
+ <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>如果你不想要使用請求上使用 validate 方法，你可以通過 validator Validator facade 手動創建一個驗證器實例。用 Facade 上的 make 方法生成一個新的驗證器實例：</li>
+</ul>
+<pre class="line-numbers language-php"><code class="language-php">
+<span class="token delimiter">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Validator</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Controller</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">PostController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 保存一篇新的博客文章。
+     *
+     * @param  Request  $request
+     * @return Response
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">store</span><span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+
+        <span class="token comment" spellcheck="true">// 傳給 make 方法的第一個參數是要驗證的數據。第二個參數則是該數據的驗證規則。</span>
+        <span class="token variable">$validator</span> <span class="token operator">=</span> Validator<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">make</span><span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+            <span class="token string">'title'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required|unique:posts|max:255'</span><span class="token punctuation">,</span>
+            <span class="token string">'body'</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'required'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$validator</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">fails</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">'post/create'</span><span class="token punctuation">)</span>
+                        <span class="token operator">-</span><span class="token operator">></span><span class="token function">withErrors</span><span class="token punctuation">(</span><span class="token variable">$validator</span><span class="token punctuation">)</span>
+                        <span class="token operator">-</span><span class="token operator">></span><span class="token function">withInput</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">// 保存文章...</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="可用驗證規則"><a href="#可用驗證規則" class="headerlink" title="可用驗證規則"></a>可用驗證規則</h2><ul>
+<li><code>Unique</code> : 驗證的字段在給定的數據庫表中必須是唯一的。如果沒有指定 column ，將會使用字段本身的名稱。<pre><code>&#39;email&#39; =&gt; &#39;unique:users,email_address&#39;
+</code></pre></li>
+</ul>
+<h2 id="顯示驗證錯誤信息"><a href="#顯示驗證錯誤信息" class="headerlink" title="顯示驗證錯誤信息"></a>顯示驗證錯誤信息</h2><p>如果傳入的請求參數未通過給定的驗證規則呢？正如前面所提到的，Laravel會自動把用戶重定向到之前的位置。另外，<strong>所有的驗證錯誤信息會被自動閃存到session</strong> .</p>
+<p>重申一次，我們不必在GET路由中將錯誤消息顯式綁定到視圖。<strong>因為Lavarel會檢查在Session數據中的錯誤信息，並自動將其綁定到視圖</strong>（如果這個視圖文件存在）。而其中的變量 $errors 是Illuminate\Support\MessageBag 的一個實例。</p>
+<h2 id="處理錯誤消息"><a href="#處理錯誤消息" class="headerlink" title="處理錯誤消息"></a>處理錯誤消息</h2>
+
+				
+				
+			
+		</div><!-- .entry-content -->
+		
+		<footer class="entry-footer">
+			<span class="posted-on font-asesome-icon">
+	<a href="" rel="bookmark">
+	<time class="updated" datetime="2018-12-01T01:25:00.000Z">2018-12-01</time>
+	</a>
+</span>
+
+	<span class="cat-links font-asesome-icon">
+		
+				<a href="/categories/Backed-End/" rel="category tag">Backed-End</a>
+		
+	</span>
+
+
+	<span class="tags-links font-asesome-icon">
+	
+		<a href="/tags/Laravel/" rel="category tag">Laravel</a>
+    
+</span>
+		
+
+    <span class="eye font-asesome-icon">
+         <span id="/2018/12/01/2018-12-1-Laravel-FormVarify/" class="leancloud_visitors" data-flag-title="Laravel 表單驗證">
+        
+        </span>
+    </span>
+
+		</footer><!-- .entry-footer -->
+</article>
+<div class="misc">
+    <a href="#main"><span class="top font-asesome-icon">Top</span></a>
+</div>
+  
+    
+<article class="hentry ">
+		
+		
+			<header class="entry-header">
+				<h2 class="entry-title"><a class="post-title-link" href="/2018/12/01/hello-world/" rel="bookmark">Hello World</a></h2>	
+			</header>
+		
+		<!-- .entry-header -->
+		<div class="entry-content">
+			
+				<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+
+				
+				
+			
+		</div><!-- .entry-content -->
+		
+		<footer class="entry-footer">
+			<span class="posted-on font-asesome-icon">
+	<a href="" rel="bookmark">
+	<time class="updated" datetime="2018-11-30T16:00:00.000Z">2018-12-01</time>
+	</a>
+</span>
+
+	<span class="cat-links font-asesome-icon">
+		
+				<a href="/categories/design/" rel="category tag">design</a>
+		
+	</span>
+
+
+	<span class="tags-links font-asesome-icon">
+	
+		<a href="/tags/test/" rel="category tag">test</a>
+    
+</span>
+		
+
+    <span class="eye font-asesome-icon">
+         <span id="/2018/12/01/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+        
+        </span>
+    </span>
+
+		</footer><!-- .entry-footer -->
+</article>
+<div class="misc">
+    <a href="#main"><span class="top font-asesome-icon">Top</span></a>
+</div>
+  
+
+
+
+			</main>
+		</div>
+		<footer id="colophon" class="site-footer">
+			<div class="site-info">
+				<span>powered by <a href="https://hexo.io/">Hexo</a>&nbsp;&nbsp; theme by <a href="https://github.com/Troy-Yang/hexo-theme-twentyfifteen-wordpress">Troy</a> &nbsp; inspired by <a href="https://wordpress.org/themes/">wordpress</a></span>
+			</div><!-- .site-info -->
+		</footer>
+	</div>
+	
+<div id="infinite-footer">
+  <div class="container">
+      <div class="blog-info">
+          <a id="infinity-blog-title" href="#" rel="home" title="Scroll back to top">
+               Happy Coding, Happy Life!
+          </a>
+      </div>
+      <div class="blog-credits">
+        <span>蜀ICP备15004900号-1</span>
+      </div>
+  </div>
+</div><!-- #infinite-footer -->
+
+    <!-- After footer scripts -->
+    <script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <!--referring from https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize("wzqncxgqp9MCPiPERe3gnX2Q-gzGzoHsz", "CCtBiqyPtJWupuozt1393AXm");
+    </script>
+    <script>
+        function showTime(Counter) {
+            var query = new AV.Query(Counter);
+            $(".leancloud_visitors").each(function () {
+                var url = $(this).attr("id").trim();
+                query.equalTo("url", url);
+                query.find({
+                    success: function (results) {
+                        if (results.length == 0) {
+                            var content = $(document.getElementById(url)).text() + ': 0';
+                            $(document.getElementById(url)).text(content);
+                            return;
+                        }
+                        for (var i = 0; i < results.length; i++) {
+                            var object = results[i];
+                            //var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+                            $(document.getElementById(url)).text(object.get('time'));
+                        }
+                    },
+                    error: function (object, error) {
+                        console.log("Error: " + error.code + " " + error.message);
+                    }
+                });
+            });
+        }
+        function addCount(Counter) {
+            var Counter = AV.Object.extend("Counter");
+            url = $(".leancloud_visitors").attr('id').trim();
+            title = $(".leancloud_visitors").attr('data-flag-title').trim();
+            var query = new AV.Query(Counter);
+            query.equalTo("url", url);
+            query.find({
+                success: function (results) {
+                    if (results.length > 0) {
+                        var counter = results[0];
+                        counter.fetchWhenSave(true);
+                        counter.increment("time");
+                        counter.save(null, {
+                            success: function (counter) {
+                                //var content = $(document.getElementById(url)).text() + ': ' + counter.get('time');
+                                // remove ': '
+                                $(document.getElementById(url)).text(counter.get('time'));
+                            },
+                            error: function (counter, error) {
+                                console.log('Failed to save Visitor num, with error message: ' + error.message);
+                            }
+                        });
+                    } else {
+                        var newcounter = new Counter();
+                        newcounter.set("title", title);
+                        newcounter.set("url", url);
+                        newcounter.set("time", 1);
+                        newcounter.save(null, {
+                            success: function (newcounter) {
+                                console.log("newcounter.get('time')=" + newcounter.get('time'));
+                                var content = $(document.getElementById(url)).text() + ': ' + newcounter.get('time');
+                                // remove ': '
+                                $(document.getElementById(url)).text(newcounter.get('time'));
+                            },
+                            error: function (newcounter, error) {
+                                console.log('Failed to create');
+                            }
+                        });
+                    }
+                },
+                error: function (error) {
+                    console.log('Error:' + error.code + " " + error.message);
+                }
+            });
+        }
+        $(function () {
+            var Counter = AV.Object.extend("Counter");
+            if ($('.leancloud_visitors').length == 1) {
+                addCount(Counter);
+            } else if ($('.post-title-link').length > 1) {
+                showTime(Counter);
+            }
+        });
+    </script>
+    
+
+    <script>
+    var searchData = [];
+    var $input = document.getElementById('local-search-input');
+    var $resultContent = document.getElementById('local-search-result');
+    var path = "/" + 'search.json';
+
+    $input.addEventListener('input', searchFunc);
+
+    $resultContent.addEventListener('focusout', function () {
+        $resultContent.style.display = "none";
+    });
+
+    window.addEventListener('click', function(){
+        $resultContent.style.display = "none";
+        $input.value = "";
+    });
+
+    $resultContent.addEventListener('click', function(){
+        event.stopPropagation();
+    });
+
+    function searchFunc() {
+        if (searchData.length == 0) {
+            loadData(searchFunc);
+        }
+        var str = '<ul>';
+        var keywords = $input.value.trim().toLowerCase().split(/[\s\-]+/);
+        $resultContent.innerHTML = "";
+        if ($input.value.trim().length <= 0) {
+            return;
+        }
+        // perform local searching
+        searchData.forEach(function (data) {
+            var isMatch = true;
+            var content_index = [];
+            if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+            }
+            var data_title = data.title.trim().toLowerCase();
+            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+            var data_url = data.url;
+            var index_title = -1;
+            var index_content = -1;
+            var first_occur = -1;
+            // only match artiles with not empty contents
+            if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+
+                    if (index_title < 0 && index_content < 0) {
+                        isMatch = false;
+                    } else {
+                        if (index_content < 0) {
+                            index_content = 0;
+                        }
+                        if (i == 0) {
+                            first_occur = index_content;
+                        }
+                    }
+                });
+            } else {
+                isMatch = false;
+            }
+            // show search results
+            if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                str += "</li>";
+            }
+        });
+        str += "</ul>";
+        $resultContent.innerHTML = str;
+        $resultContent.style.display = "block";
     }
-</style>
 
-<div class="bg-cover index-cover about-cover" style="background-image: url('/medias/cover.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-                <div class="brand">
-                    <div class="title center-align">
-                        
-                        Weeks of programming can save you hours of planning.
-                        
-                    </div>
-
-                    <div class="description center-align">
-                        
-                        Do one thing, and do it well.
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="cover-btns">
-            <a href="#recommend-sections" class="waves-effect waves-light btn">
-                <i class="fa fa-angle-double-down"></i>文章閱讀
-            </a>
-
-            
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
-                <i class="fa fa-github-alt"></i>Github
-            </a>
-            
-        </div>
-        <div class="cover-social-link"><a href="https://github.com/YangYangXun" class="tooltipped" target="_blank" data-tooltip="Go To My GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<!-- <a href="asdf1995905@gmail.com" class="tooltipped" target="_blank" data-tooltip="My Gmail" data-position="top"
-    data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a> -->
-<!-- <a href="#!" class="tooltipped" data-tooltip="QQ??�系???: 1181062873" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a> -->
-</div>
-        
-    </div>
-</div>
-
-<script>
-    // Dynamically switch banner pictures every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+    function loadData(callback) {
+        $resultContent.innerHTML = '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>';
+        $.ajax({
+            url: path,
+            dataType: "json",
+            success: function (response) {
+                searchData = response;
+                callback();
+            }
+        });
+    }
 </script>
 
-<main class="content">
-
-    
-
-    <div id="recommend-sections">
-    
-    
-
-
-
-    
-    </div>
-
-    
-
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/03/24/2019-03-24-PHP-Unit-Test/">
-                        <div class="card-image">
-                            
-                            <img src="https://i.imgur.com/KlY9wSP.png" class="responsive-img" alt="使用 PHP Unit 進行測試">
-                            
-                            <span class="card-title">使用 PHP Unit 進行測試</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">安裝 PHP Unit$ composer require phpunit/phpunit
-建立 app 目錄夾與測試目錄夾applicat</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-24
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/PHP/" class="post-category" target="_blank">
-                                    PHP
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/PHP/" target="_blank">
-                            <span class="chip bg-color">PHP</span>
-                        </a>
-                        
-                        <a href="/tags/UnitTest/" target="_blank">
-                            <span class="chip bg-color">UnitTest</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/03/16/2019-03-16-Linux-SSH/">
-                        <div class="card-image">
-                            
-                            <img src="https://i.imgur.com/zYCtMLO.png" class="responsive-img" alt="利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統">
-                            
-                            <span class="card-title">利用 SSH 連進本地端 VirtualBox 的 Ubuntu Linux 系統</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">前言工作也差不多 4 個多月了，發現 Linux 很重要，這邊就紀錄一下最近學習 Linux 基礎的筆記。
-步驟版本：ubnutn 18.4</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-16
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/" target="_blank">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/03/01/2019-03-01-Vim-Basic/">
-                        <div class="card-image">
-                            
-                            <img src="https://i.imgur.com/XFFkDAP.png" class="responsive-img" alt="Vim 編輯器入門">
-                            
-                            <span class="card-title">Vim 編輯器入門</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">Vim 的設定檔家目錄底下 $ vim .vimrc
-所有 Vim 相關的設定都會在此更改
-
-set nu : 顯示行號
-set curso</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Linux/" class="post-category" target="_blank">
-                                    Linux
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Linux/" target="_blank">
-                            <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                        <a href="/tags/Vim/" target="_blank">
-                            <span class="chip bg-color">Vim</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/01/13/2019-01-13-JavaScript_1/">
-                        <div class="card-image">
-                            
-                            <img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/JavaScript%20%E5%AD%B8%E7%BF%92%E6%AD%B7%E7%A8%8B%2Fjavascript-740x374.png?alt=media&amp;token=10c2ca86-2d87-4e47-8ea2-95f6e86a9168" class="responsive-img" alt="JavaScript 學習歷程 - 1.變數與型別">
-                            
-                            <span class="card-title">JavaScript 學習歷程 - 1.變數與型別</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">變數 (Variable)從大學時期到現在學過不少語言，變數是入門各種語言會在一開始碰到的。什麼是變數呢？變數幫助我們在 coding 解問</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Front-End/" class="post-category" target="_blank">
-                                    Front End
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaScript/" target="_blank">
-                            <span class="chip bg-color">JavaScript</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/12/12/2018-12-12-Vargant/">
-                        <div class="card-image">
-                            
-                            <img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E9%A6%96%E5%9C%96%2F2018-12-12-Vargant.png?alt=media&amp;token=481ebca9-044d-4366-a3b8-72c983512d23" class="responsive-img" alt="Vargnat 入門與簡介">
-                            
-                            <span class="card-title">Vargnat 入門與簡介</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">Vagrant 入門與簡介Vagrant 是什麼？
-用來建構跨平台虛擬開發環境的工具，並且提供可配置、可再生、可攜性佳的環境。
-
-
-在部署軟</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-12
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Development-Tools/" class="post-category" target="_blank">
-                                    Development Tools
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Vargant/" target="_blank">
-                            <span class="chip bg-color">Vargant</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/12/08/2018-12-4-Gitflow-SourceTree/">
-                        <div class="card-image">
-                            
-                            <img src="https://firebasestorage.googleapis.com/v0/b/yangyangxun-4937f.appspot.com/o/%E9%83%A8%E8%90%BD%E6%A0%BC%E6%96%87%E7%AB%A0%E9%A6%96%E5%9C%96%2F2018-12-4-GitFlow-SourceTree.png?alt=media&amp;token=96cfb2d7-1a39-40fe-9002-1e00a1af2a67" class="responsive-img" alt="入門 SourceTree">
-                            
-                            <span class="card-title">入門 SourceTree</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">前言最近剛到職上班，公司用 SourceTree 當作 Git 圖形化工具，這邊記錄一些入門技巧。
-實作步驟
-初始環境為 Clone 下 G</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-08
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Development-Tools/" class="post-category" target="_blank">
-                                    Development Tools
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Git/" target="_blank">
-                            <span class="chip bg-color">Git</span>
-                        </a>
-                        
-                        <a href="/tags/SourceTree/" target="_blank">
-                            <span class="chip bg-color">SourceTree</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/12/02/2018-12-2-Laravel-Session/">
-                        <div class="card-image">
-                            
-                            <img src="https://img.itw01.com/images/20171105/013720rYafdS_V5UOEGV.jpg!r1024x0.jpg" class="responsive-img" alt="Laravel Session 機制">
-                            
-                            <span class="card-title">Laravel Session 機制</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">前言HTTP 是無狀態的，所以需要有一種能夠在請求之間紀錄狀態的法，透過這種紀錄的方法網站系統才能夠判別使用者目前狀態 ( 登入 登出 權限</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Backed-End/" class="post-category" target="_blank">
-                                    Backed-End
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Laravel/" target="_blank">
-                            <span class="chip bg-color">Laravel</span>
-                        </a>
-                        
-                        <a href="/tags/Session/" target="_blank">
-                            <span class="chip bg-color">Session</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/12/01/2018-12-1-Laravel-FormVarify/">
-                        <div class="card-image">
-                            
-                            <img src="https://github.com/YangYangXun/ProjectImage/blob/master/EcommerceFashe/cart.png?raw=true" class="responsive-img" alt="Laravel 表單驗證">
-                            
-                            <span class="card-title">Laravel 表單驗證</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">
-在laravel中，其實可以說是有兩種方式來進行表單驗證：使用 Request 和使用 Validation 。
-5.5 新增 make </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Backed-End/" class="post-category" target="_blank">
-                                    Backed-End
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Laravel/" target="_blank">
-                            <span class="chip bg-color">Laravel</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/12/01/hello-world/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                            
-                            <span class="card-title">Hello World</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/design/" class="post-category" target="_blank">
-                                    design
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/test/" target="_blank">
-                            <span class="chip bg-color">test</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
-    </article>
-
-</main>
-
-
-
-<footer class="page-footer bg-color">
-    <div class="container row center-align">
-        <div class="col s12 m8 l8 copy-right">
-            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
-        </div>
-        <div class="col s12 m4 l4 social-link"><a href="https://github.com/YangYangXun" class="tooltipped" target="_blank" data-tooltip="Go To My GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<!-- <a href="asdf1995905@gmail.com" class="tooltipped" target="_blank" data-tooltip="My Gmail" data-position="top"
-    data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a> -->
-<!-- <a href="#!" class="tooltipped" data-tooltip="QQ??�系???: 1181062873" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a> -->
-</div>
-    </div>
-</footer>
-
-<div class="progress-bar"></div>
-
-
-<!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title">Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword" class="search-input" autofocus>
-        </div>
-        <div id="searchResult"></div>
-    </div>
-</div>
-
-<script src="/js/search.js"></script>
-<script type="text/javascript">
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
-</script>
-<!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fa fa-angle-up"></i>
-    </a>
-</div>
-
-
-<script src="/libs/materialize/js/materialize.min.js"></script>
-<script src="/libs/masonry/masonry.pkgd.min.js"></script>
-<script src="/libs/aos/aos.js"></script>
-<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-<script src="/js/matery.js"></script>
 </body>
 </html>
